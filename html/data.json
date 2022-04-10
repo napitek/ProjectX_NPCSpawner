@@ -1,0 +1,787 @@
+{
+    "peds": [
+        "a_f_m_beach_01",
+        "a_f_m_bevhills_01",
+        "a_f_m_bevhills_02",
+        "a_f_m_bodybuild_01",
+        "a_f_m_business_02",
+        "a_f_m_downtown_01",
+        "a_f_m_eastsa_01",
+        "a_f_m_eastsa_02",
+        "a_f_m_fatbla_01",
+        "a_f_m_fatcult_01",
+        "a_f_m_fatwhite_01",
+        "a_f_m_ktown_01",
+        "a_f_m_ktown_02",
+        "a_f_m_prolhost_01",
+        "a_f_m_salton_01",
+        "a_f_m_skidrow_01",
+        "a_f_m_soucent_01",
+        "a_f_m_soucent_02",
+        "a_f_m_soucentmc_01",
+        "a_f_m_tourist_01",
+        "a_f_m_tramp_01",
+        "a_f_m_trampbeac_01",
+        "a_f_o_genstreet_01",
+        "a_f_o_indian_01",
+        "a_f_o_ktown_01",
+        "a_f_o_salton_01",
+        "a_f_o_soucent_01",
+        "a_f_o_soucent_02",
+        "a_f_y_beach_01",
+        "a_f_y_bevhills_01",
+        "a_f_y_bevhills_02",
+        "a_f_y_bevhills_03",
+        "a_f_y_bevhills_04",
+        "a_f_y_business_01",
+        "a_f_y_business_02",
+        "a_f_y_business_03",
+        "a_f_y_business_04",
+        "a_f_y_clubcust_01",
+        "a_f_y_clubcust_02",
+        "a_f_y_clubcust_03",
+        "a_f_y_eastsa_01",
+        "a_f_y_eastsa_02",
+        "a_f_y_eastsa_03",
+        "a_f_y_epsilon_01",
+        "a_f_y_femaleagent",
+        "a_f_y_fitness_01",
+        "a_f_y_fitness_02",
+        "a_f_y_genhot_01",
+        "a_f_y_golfer_01",
+        "a_f_y_hiker_01",
+        "a_f_y_hippie_01",
+        "a_f_y_hipster_01",
+        "a_f_y_hipster_02",
+        "a_f_y_hipster_03",
+        "a_f_y_hipster_04",
+        "a_f_y_indian_01",
+        "a_f_y_juggalo_01",
+        "a_f_y_runner_01",
+        "a_f_y_rurmeth_01",
+        "a_f_y_scdressy_01",
+        "a_f_y_skater_01",
+        "a_f_y_soucent_01",
+        "a_f_y_soucent_02",
+        "a_f_y_soucent_03",
+        "a_f_y_tennis_01",
+        "a_f_y_topless_01",
+        "a_f_y_tourist_01",
+        "a_f_y_tourist_02",
+        "a_f_y_vinewood_01",
+        "a_f_y_vinewood_02",
+        "a_f_y_vinewood_03",
+        "a_f_y_vinewood_04",
+        "a_f_y_yoga_01",
+        "a_f_y_gencaspat_01",
+        "a_f_y_smartcaspat_01",
+        "a_m_m_acult_01",
+        "a_m_m_afriamer_01",
+        "a_m_m_beach_01",
+        "a_m_m_beach_02",
+        "a_m_m_beach_02",
+        "a_m_m_bevhills_02",
+        "a_m_m_business_01",
+        "a_m_m_eastsa_01",
+        "a_m_m_eastsa_02",
+        "a_m_m_farmer_01",
+        "a_m_m_fatlatin_01",
+        "a_m_m_genfat_01",
+        "a_m_m_genfat_02",
+        "a_m_m_golfer_01",
+        "a_m_m_hasjew_01",
+        "a_m_m_hillbilly_01",
+        "a_m_m_hillbilly_02",
+        "a_m_m_indian_01",
+        "a_m_m_ktown_01",
+        "a_m_m_malibu_01",
+        "a_m_m_mexcntry_01",
+        "a_m_m_mexlabor_01",
+        "a_m_m_og_boss_01",
+        "a_m_m_paparazzi_01",
+        "a_m_m_polynesian_01",
+        "a_m_m_prolhost_01",
+        "a_m_m_rurmeth_01",
+        "a_m_m_salton_01",
+        "a_m_m_salton_02",
+        "a_m_m_salton_03",
+        "a_m_m_salton_04",
+        "a_m_m_skater_01",
+        "a_m_m_skidrow_01",
+        "a_m_m_socenlat_01",
+        "a_m_m_soucent_01",
+        "a_m_m_soucent_02",
+        "a_m_m_soucent_03",
+        "a_m_m_soucent_04",
+        "a_m_m_stlat_02",
+        "a_m_m_tennis_01",
+        "a_m_m_tourist_01",
+        "a_m_m_tramp_01",
+        "a_m_m_trampbeac_01",
+        "a_m_m_tranvest_01",
+        "a_m_m_tranvest_02",
+        "a_m_o_acult_01",
+        "a_m_o_acult_02",
+        "a_m_o_beach_01",
+        "a_m_o_genstreet_01",
+        "a_m_o_ktown_01",
+        "a_m_o_salton_01",
+        "a_m_o_soucent_01",
+        "a_m_o_soucent_02",
+        "a_m_o_soucent_03",
+        "a_m_o_tramp_01",
+        "a_m_y_acult_01",
+        "a_m_y_acult_02",
+        "a_m_y_beach_01",
+        "a_m_y_beach_02",
+        "a_m_y_beach_03",
+        "a_m_y_beachvesp_01",
+        "a_m_y_beachvesp_02",
+        "a_m_y_bevhills_01",
+        "a_m_y_bevhills_02",
+        "a_m_y_breakdance_01",
+        "a_m_y_busicas_01",
+        "a_m_y_business_01",
+        "a_m_y_business_02",
+        "a_m_y_business_03",
+        "a_m_y_clubcust_01",
+        "a_m_y_clubcust_02",
+        "a_m_y_clubcust_03",
+        "a_m_y_cyclist_01",
+        "a_m_y_dhill_01",
+        "a_m_y_downtown_01",
+        "a_m_y_eastsa_01",
+        "a_m_y_eastsa_02",
+        "a_m_y_epsilon_01",
+        "a_m_y_epsilon_02",
+        "a_m_y_gay_01",
+        "a_m_y_gay_02",
+        "a_m_y_genstreet_01",
+        "a_m_y_genstreet_02",
+        "a_m_y_golfer_01",
+        "a_m_y_hasjew_01",
+        "a_m_y_hiker_01",
+        "a_m_y_hippy_01",
+        "a_m_y_hipster_01",
+        "a_m_y_hipster_02",
+        "a_m_y_hipster_03",
+        "a_m_y_indian_01",
+        "a_m_y_jetski_01",
+        "a_m_y_juggalo_01",
+        "a_m_y_ktown_01",
+        "a_m_y_ktown_02",
+        "a_m_y_latino_01",
+        "a_m_y_methhead_01",
+        "a_m_y_mexthug_01",
+        "a_m_y_motox_01",
+        "a_m_y_motox_02",
+        "a_m_y_musclbeac_01",
+        "a_m_y_musclbeac_02",
+        "a_m_y_polynesian_01",
+        "a_m_y_roadcyc_01",
+        "a_m_y_runner_01",
+        "a_m_y_runner_02",
+        "a_m_y_salton_01",
+        "a_m_y_skater_01",
+        "a_m_y_skater_02",
+        "a_m_y_soucent_01",
+        "a_m_y_soucent_02",
+        "a_m_y_soucent_03",
+        "a_m_y_soucent_04",
+        "a_m_y_stbla_01",
+        "a_m_y_stbla_02",
+        "a_m_y_stlat_01",
+        "a_m_y_stwhi_01",
+        "a_m_y_stwhi_02",
+        "a_m_y_sunbathe_01",
+        "a_m_y_surfer_01",
+        "a_m_y_vindouche_01",
+        "a_m_y_vinewood_01",
+        "a_m_y_vinewood_02",
+        "a_m_y_vinewood_03",
+        "a_m_y_vinewood_04",
+        "a_m_y_yoga_01",
+        "a_m_m_mlcrisis_01",
+        "a_m_y_gencaspat_01",
+        "a_m_y_smartcaspat_01",
+        "a_c_boar",
+        "a_c_cat_01",
+        "a_c_chickenhawk",
+        "a_c_chimp",
+        "a_c_chop",
+        "a_c_cormorant",
+        "a_c_cow",
+        "a_c_coyote",
+        "a_c_crow",
+        "a_c_deer",
+        "a_c_dolphin",
+        "a_c_fish",
+        "a_c_hen",
+        "a_c_humpback",
+        "a_c_husky",
+        "a_c_killerwhale",
+        "a_c_mtlion",
+        "a_c_pig",
+        "a_c_pigeon",
+        "a_c_poodle",
+        "a_c_pug",
+        "a_c_rabbit_01",
+        "a_c_rat",
+        "a_c_retriever",
+        "a_c_rhesus",
+        "a_c_rottweiler",
+        "a_c_seagull",
+        "a_c_sharkhammer",
+        "a_c_sharktiger",
+        "a_c_shepherd",
+        "a_c_stingray",
+        "a_c_westy",
+        "cs_amandatownley",
+        "cs_andreas",
+        "cs_ashley",
+        "cs_bankman",
+        "cs_barry",
+        "cs_beverly",
+        "cs_brad",
+        "cs_bradcadaver",
+        "cs_carbuyer",
+        "cs_casey",
+        "cs_chengsr",
+        "cs_chrisformage",
+        "cs_clay",
+        "cs_dale",
+        "cs_davenorton",
+        "cs_debra",
+        "cs_denise",
+        "cs_devin",
+        "cs_dom",
+        "cs_dreyfuss",
+        "cs_drfriedlander",
+        "cs_fabien",
+        "cs_fbisuit_01",
+        "cs_floyd",
+        "cs_guadalope",
+        "cs_gurk",
+        "cs_hunter",
+        "cs_janet",
+        "cs_jewelass",
+        "cs_jimmyboston",
+        "cs_jimmydisanto",
+        "cs_joeminuteman",
+        "cs_johnnyklebitz",
+        "cs_josef",
+        "cs_josh",
+        "cs_karen_daniels",
+        "cs_lamardavis",
+        "cs_lazlow",
+        "cs_lazlow_2",
+        "cs_lestercrest",
+        "cs_lifeinvad_01",
+        "cs_magenta",
+        "cs_manuel",
+        "cs_marnie",
+        "cs_martinmadrazo",
+        "cs_maryann",
+        "cs_michelle",
+        "cs_milton",
+        "cs_molly",
+        "cs_movpremf_01",
+        "cs_movpremmale",
+        "cs_mrk",
+        "cs_mrs_thornhill",
+        "cs_mrsphillips",
+        "cs_natalia",
+        "cs_nervousron",
+        "cs_nigel",
+        "cs_old_man1a",
+        "cs_old_man2",
+        "cs_omega",
+        "cs_orleans",
+        "cs_paper",
+        "cs_patricia",
+        "cs_priest",
+        "cs_prolsec_02",
+        "cs_russiandrunk",
+        "cs_siemonyetarian",
+        "cs_solomon",
+        "cs_stevehains",
+        "cs_stretch",
+        "cs_tanisha",
+        "cs_taocheng",
+        "cs_taostranslator",
+        "cs_tenniscoach",
+        "cs_terry",
+        "cs_tom",
+        "cs_tomepsilon",
+        "cs_tracydisanto",
+        "cs_wade",
+        "cs_zimbor",
+        "csb_abigail",
+        "csb_agent",
+        "csb_alan",
+        "csb_anita",
+        "csb_anton",
+        "csb_avon",
+        "csb_ballasog",
+        "csb_bogdan",
+        "csb_bride",
+        "csb_bryony",
+        "csb_burgerdrug",
+        "csb_car3guy1",
+        "csb_car3guy2",
+        "csb_chef",
+        "csb_chef2",
+        "csb_chin_goon",
+        "csb_cletus",
+        "csb_cop",
+        "csb_customer",
+        "csb_denise_friend",
+        "csb_dix",
+        "csb_djblamadon",
+        "csb_englishdave",
+        "csb_fos_rep",
+        "csb_g",
+        "csb_groom",
+        "csb_grove_str_dlr",
+        "csb_hao",
+        "csb_hugh",
+        "csb_imran",
+        "csb_jackhowitzer",
+        "csb_janitor",
+        "csb_maude",
+        "csb_money",
+        "csb_mp_agent14",
+        "csb_mrs_r",
+        "csb_mweather",
+        "csb_ortega",
+        "csb_oscar",
+        "csb_paige",
+        "csb_popov",
+        "csb_porndudes",
+        "csb_prologuedriver",
+        "csb_prolsec",
+        "csb_ramp_gang",
+        "csb_ramp_hic",
+        "csb_ramp_hipster",
+        "csb_ramp_marine",
+        "csb_ramp_mex",
+        "csb_talmm",
+        "csb_tonya",
+        "csb_tonyprince",
+        "csb_trafficwarden",
+        "csb_undercover",
+        "csb_vagspeak",
+        "csb_agatha",
+        "csb_avery",
+        "csb_brucie2",
+        "csb_thornton",
+        "csb_tomcasino",
+        "csb_vincent",
+        "g_f_importexport_01",
+        "g_f_importexport_01",
+        "g_f_y_ballas_01",
+        "g_f_y_families_01",
+        "g_f_y_lost_01",
+        "g_f_y_vagos_01",
+        "g_m_importexport_01",
+        "g_m_y_ballaorig_01",
+        "g_m_y_ballasout_01",
+        "g_m_y_famca_01",
+        "g_m_y_famdnf_01",
+        "u_m_y_juggernaut_01",
+        "u_m_y_pogo_01"
+    ],
+    "weapons": [
+        {
+            "hashkey": "weapon_advancedrifle",
+            "desc": "Advanced Rifle"
+        },
+        {
+            "hashkey": "weapon_appistol",
+            "desc": "AP Pistol"
+        },
+        {
+            "hashkey": "weapon_assaultrifle",
+            "desc": "Assault Rifle"
+        },
+        {
+            "hashkey": "weapon_assaultrifle_mk2",
+            "desc": "Assault Rifle Mk II"
+        },
+        {
+            "hashkey": "weapon_assaultshotgun",
+            "desc": "Assault Shotgun"
+        },
+        {
+            "hashkey": "weapon_assaultsmg",
+            "desc": "Assault SMG"
+        },
+        {
+            "hashkey": "weapon_autoshotgun",
+            "desc": "Sweeper Shotgun"
+        },
+        {
+            "hashkey": "weapon_bat",
+            "desc": "Baseball Bat"
+        },
+        {
+            "hashkey": "weapon_ball",
+            "desc": "Ball"
+        },
+        {
+            "hashkey": "weapon_battleaxe",
+            "desc": "Battle Axe"
+        },
+        {
+            "hashkey": "weapon_bottle",
+            "desc": "Bottle"
+        },
+        {
+            "hashkey": "weapon_bullpuprifle",
+            "desc": "Bullpup Rifle"
+        },
+        {
+            "hashkey": "weapon_bullpuprifle_mk2",
+            "desc": "Bullpup Rifle Mk II"
+        },
+        {
+            "hashkey": "weapon_bullpupshotgun",
+            "desc": "Bullpup Shotgun"
+        },
+        {
+            "hashkey": "weapon_bzgas",
+            "desc": "BZ Gas"
+        },
+        {
+            "hashkey": "weapon_carbinerifle",
+            "desc": "Carbine Rifle"
+        },
+        {
+            "hashkey": "weapon_carbinerifle_mk2",
+            "desc": "Carbine Rifle Mk II"
+        },
+        {
+            "hashkey": "weapon_combatmg",
+            "desc": "Combat MG"
+        },
+        {
+            "hashkey": "weapon_combatmg_mk2",
+            "desc": "Combat MG Mk II"
+        },
+        {
+            "hashkey": "weapon_combatpdw",
+            "desc": "Combat PDW"
+        },
+        {
+            "hashkey": "weapon_combatpistol",
+            "desc": "Combat Pistol"
+        },
+        {
+            "hashkey": "weapon_compactlauncher",
+            "desc": "Compact Grenade Launcher"
+        },
+        {
+            "hashkey": "weapon_compactrifle",
+            "desc": "Compact Rifle"
+        },
+        {
+            "hashkey": "weapon_crowbar",
+            "desc": "Crowbar"
+        },
+        {
+            "hashkey": "weapon_dagger",
+            "desc": "Antique Cavalry Dagger"
+        },
+        {
+            "hashkey": "weapon_dbshotgun",
+            "desc": "Double Barrel Shotgun"
+        },
+        {
+            "hashkey": "weapon_doubleaction",
+            "desc": "Double-Action Revolver"
+        },
+        {
+            "hashkey": "weapon_fireextinguisher",
+            "desc": "Fire Extinguisher"
+        },
+        {
+            "hashkey": "weapon_firework",
+            "desc": "Firework Launcher"
+        },
+        {
+            "hashkey": "weapon_flare",
+            "desc": "Flare"
+        },
+        {
+            "hashkey": "weapon_flaregun",
+            "desc": "Flare Gun"
+        },
+        {
+            "hashkey": "weapon_flashlight",
+            "desc": "Flashlight"
+        },
+        {
+            "hashkey": "weapon_golfclub",
+            "desc": "Golf Club"
+        },
+        {
+            "hashkey": "weapon_grenade",
+            "desc": "Grenade"
+        },
+        {
+            "hashkey": "weapon_grenadelauncher",
+            "desc": "Grenade Launcher"
+        },
+        {
+            "hashkey": "weapon_gusenberg",
+            "desc": "Gusenberg Sweeper"
+        },
+        {
+            "hashkey": "weapon_hammer",
+            "desc": "Hammer"
+        },
+        {
+            "hashkey": "weapon_hatchet",
+            "desc": "Hatchet"
+        },
+        {
+            "hashkey": "weapon_heavypistol",
+            "desc": "Heavy Pistol"
+        },
+        {
+            "hashkey": "weapon_heavyshotgun",
+            "desc": "Heavy Shotgun"
+        },
+        {
+            "hashkey": "weapon_heavysniper",
+            "desc": "Heavy Sniper"
+        },
+        {
+            "hashkey": "weapon_heavysniper_mk2",
+            "desc": "Heavy Sniper Mk II"
+        },
+        {
+            "hashkey": "weapon_hominglauncher",
+            "desc": "Homing Launcher"
+        },
+        {
+            "hashkey": "weapon_knife",
+            "desc": "Knife"
+        },
+        {
+            "hashkey": "weapon_knuckle",
+            "desc": "Knuckle Duster"
+        },
+        {
+            "hashkey": "weapon_machete",
+            "desc": "Machete"
+        },
+        {
+            "hashkey": "weapon_machinepistol",
+            "desc": "Machine Pistol"
+        },
+        {
+            "hashkey": "weapon_marksmanpistol",
+            "desc": "Marksman Pistol"
+        },
+        {
+            "hashkey": "weapon_marksmanrifle",
+            "desc": "Marksman Rifle"
+        },
+        {
+            "hashkey": "weapon_marksmanrifle_mk2",
+            "desc": "Marksman Rifle Mk II"
+        },
+        {
+            "hashkey": "weapon_mg",
+            "desc": "MG"
+        },
+        {
+            "hashkey": "weapon_microsmg",
+            "desc": "Micro SMG"
+        },
+        {
+            "hashkey": "weapon_minigun",
+            "desc": "Minigun"
+        },
+        {
+            "hashkey": "weapon_minismg",
+            "desc": "Mini SMG"
+        },
+        {
+            "hashkey": "weapon_molotov",
+            "desc": "Molotov"
+        },
+        {
+            "hashkey": "weapon_musket",
+            "desc": "Musket"
+        },
+        {
+            "hashkey": "weapon_nightstick",
+            "desc": "Nightstick"
+        },
+        {
+            "hashkey": "weapon_petrolcan",
+            "desc": "Jerry Can"
+        },
+        {
+            "hashkey": "weapon_pipebomb",
+            "desc": "Pipe Bomb"
+        },
+        {
+            "hashkey": "weapon_pistol",
+            "desc": "Pistol"
+        },
+        {
+            "hashkey": "weapon_pistol50",
+            "desc": "Pistol .50"
+        },
+        {
+            "hashkey": "weapon_pistol_mk2",
+            "desc": "Pistol Mk II"
+        },
+        {
+            "hashkey": "weapon_poolcue",
+            "desc": "Pool Cue"
+        },
+        {
+            "hashkey": "weapon_proxmine",
+            "desc": "Proximity Mine"
+        },
+        {
+            "hashkey": "weapon_pumpshotgun",
+            "desc": "Pump Shotgun"
+        },
+        {
+            "hashkey": "weapon_pumpshotgun_mk2",
+            "desc": "Pump Shotgun Mk II"
+        },
+        {
+            "hashkey": "weapon_railgun",
+            "desc": "Railgun"
+        },
+        {
+            "hashkey": "weapon_revolver",
+            "desc": "Heavy Revolver"
+        },
+        {
+            "hashkey": "weapon_revolver_mk2",
+            "desc": "Heavy Revolver Mk II"
+        },
+        {
+            "hashkey": "weapon_rpg",
+            "desc": "RPG"
+        },
+        {
+            "hashkey": "weapon_sawnoffshotgun",
+            "desc": "Sawed-Off Shotgun"
+        },
+        {
+            "hashkey": "weapon_smg",
+            "desc": "SMG"
+        },
+        {
+            "hashkey": "weapon_smg_mk2",
+            "desc": "SMG Mk II"
+        },
+        {
+            "hashkey": "weapon_smokegrenade",
+            "desc": "Tear Gas"
+        },
+        {
+            "hashkey": "weapon_sniperrifle",
+            "desc": "Sniper Rifle"
+        },
+        {
+            "hashkey": "weapon_snowball",
+            "desc": "Snowball"
+        },
+        {
+            "hashkey": "weapon_snspistol",
+            "desc": "SNS Pistol"
+        },
+        {
+            "hashkey": "weapon_snspistol_mk2",
+            "desc": "SNS Pistol Mk II"
+        },
+        {
+            "hashkey": "weapon_specialcarbine",
+            "desc": "Special Carbine"
+        },
+        {
+            "hashkey": "weapon_specialcarbine_mk2",
+            "desc": "Special Carbine Mk II"
+        },
+        {
+            "hashkey": "weapon_stickybomb",
+            "desc": "Sticky Bomb"
+        },
+        {
+            "hashkey": "weapon_stungun",
+            "desc": "Stun Gun"
+        },
+        {
+            "hashkey": "weapon_switchblade",
+            "desc": "Switchblade"
+        },
+        {
+            "hashkey": "weapon_vintagepistol",
+            "desc": "Vintage Pistol"
+        },
+        {
+            "hashkey": "weapon_wrench",
+            "desc": "Pipe Wrench"
+        },
+        {
+            "hashkey": "weapon_raypistol",
+            "desc": "Up-n-Atomizer"
+        },
+        {
+            "hashkey": "weapon_raycarbine",
+            "desc": "Unholy Hellbringer"
+        },
+        {
+            "hashkey": "weapon_rayminigun",
+            "desc": "Widowmaker"
+        },
+        {
+            "hashkey": "weapon_stone_hatchet",
+            "desc": "Stone Hatchet"
+        }
+    ],
+    "scenarios": [
+        "WORLD_HUMAN_COP_IDLES",
+        "WORLD_HUMAN_BINOCULARS",
+        "WORLD_HUMAN_CHEERING",
+        "WORLD_HUMAN_DRINKING",
+        "WORLD_HUMAN_SMOKING",
+        "WORLD_HUMAN_MOBILE_FILM_SHOCKING",
+        "WORLD_HUMAN_GARDENER_PLANT",
+        "WORLD_HUMAN_GUARD_STAND",
+        "WORLD_HUMAN_HAMMERING",
+        "WORLD_HUMAN_HANG_OUT_STREET",
+        "WORLD_HUMAN_HIKER_STANDING",
+        "WORLD_HUMAN_HUMAN_STATUE",
+        "WORLD_HUMAN_JOG_STANDING",
+        "WORLD_HUMAN_LEANING",
+        "WORLD_HUMAN_MUSCLE_FLEX",
+        "WORLD_HUMAN_PAPARAZZI",
+        "WORLD_HUMAN_PICNIC",
+        "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER",
+        "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS",
+        "WORLD_HUMAN_PROSTITUTE_LOW_CLASS",
+        "WORLD_HUMAN_PUSH_UPS",
+        "WORLD_HUMAN_SIT_UPS",
+        "WORLD_HUMAN_STAND_FISHING",
+        "WORLD_HUMAN_STAND_IMPATIENT",
+        "WORLD_HUMAN_STAND_MOBILE",
+        "WORLD_HUMAN_STRIP_WATCH_STAND",
+        "WORLD_HUMAN_SUNBATHE_BACK",
+        "WORLD_HUMAN_SUNBATHE",
+        "WORLD_HUMAN_WELDING",
+        "WORLD_HUMAN_YOGA",
+        "CODE_HUMAN_MEDIC_KNEEL",
+        "CODE_HUMAN_POLICE_CROWD_CONTROL",
+        "CODE_HUMAN_POLICE_INVESTIGATE"
+    ]
+}

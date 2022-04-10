@@ -1,0 +1,52 @@
+body {
+    background: none !important;
+    font-size: 22px;
+}
+
+#app {
+    padding: 25px;
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(44, 44, 44);
+    height: 1000px;
+    width: 1800px;
+    border: 2px solid #ff4081;
+    border-radius: 7px;
+}
+
+#pedCard {
+    padding: 30px;
+    border-radius: 7px;
+    border: 2px solid #ffffff;
+    font-size: 20px;
+}
+
+.nav-pills > li > a {
+    border-radius: 0;
+}
+
+.form-check-input:checked {
+    background-color: #ff4081 !important;
+    border-color: #ff4081 !important;
+}
+
+.transparent{
+    background: rgba(0, 0, 0, 0) !important;
+    color: #ffffff !important;
+}
+
+.scrollable{
+    height: 350px !important;
+    overflow-y: scroll;
+}
+
+.btn {
+    font-size: 20px !important;
+}
+.btn-fuchsia {
+    background-color: #ff4081;
+    color: #ffffff;
+}
