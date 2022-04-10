@@ -30,132 +30,126 @@
                 </div>
             </div>
             <hr>
-            <div class="row">
-                <b>Bookmarks <span class="badge bg-secondary">COOMING SOON</span></b>
-            </div>
-            <hr>
-            <br>
-            <div id="pedCard" class="card transparent">
-                <div class="row">
-                    <div class="col">
-                        <div class="input-group">
-                            <span class="input-group-text">Quantity</span>
-                            <input type="number" min="1" max="50" class="form-control" aria-label="Number of NPCs"
-                                id="pedsNumberInput" value="1">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="input-group">
-                            <label class="input-group-text" for="modelSelect">Model&nbsp;&nbsp;<i
-                                    class="fa fa-eye"></i></label>
-                            <select class="form-select" id="modelSelect"></select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <span class="input-group-text">MaxHealth</span>
-                            <input type="number" min="1" max="100" class="form-control" aria-label="MaxHealth"
-                                id="maxHealthInput" value="100">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <span class="input-group-text">Armour</span>
-                            <input type="number" min="1" max="100" class="form-control" aria-label="Armour"
-                                id="armourInput" value="100">
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="input-group">
-                            <label class="input-group-text" for="scenariosSelect">ScenarioInPlace</label>
-                            <select class="form-select" id="scenariosSelect"></select>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="input-group">
-                            <label class="input-group-text" for="weaponsSelect">
-                                Weapon&nbsp;&nbsp;<i class="fa fa-eye"></i>
-                            </label>
-                            <select class="form-select" id="weaponsSelect"></select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="teamsRadio" id="allies"
-                                    value="allies" checked="checked">
-                                <label class="form-check-label" for="allies">Allies</label>
+            <ul class="nav nav-tabs" id="mainTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#configurator"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Configurator</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bookmarks"
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Bookmarks <span
+                            class="badge bg-secondary">COOMING SOON</span></button>
+                </li>
+            </ul>
+            <div class="tab-content" id="mainTabContent">
+                <div class="tab-pane fade show active" id="configurator" role="tabpanel"
+                    aria-labelledby="configurator-tab">
+                    <br>
+                    <div id="pedCard" class="card transparent">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <span class="input-group-text">Quantity</span>
+                                    <input type="number" min="1" max="50" class="form-control"
+                                        aria-label="Number of NPCs" id="pedsNumberInput" value="1">
+                                </div>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="teamsRadio" id="enemies"
-                                    value="enemies">
-                                <label class="form-check-label" for="enemies">Enemies</label>
+                            <div class="col-4">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="modelSelect">Model&nbsp;&nbsp;<i
+                                            class="fa fa-eye"></i></label>
+                                    <select class="form-select" id="modelSelect"></select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <span class="input-group-text">MaxHealth</span>
+                                    <input type="number" min="1" max="100" class="form-control" aria-label="MaxHealth"
+                                        id="maxHealthInput" value="100">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <span class="input-group-text">Armour</span>
+                                    <input type="number" min="1" max="100" class="form-control" aria-label="Armour"
+                                        id="armourInput" value="100">
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="scenariosSelect">ScenarioInPlace</label>
+                                    <select class="form-select" id="scenariosSelect"></select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="weaponsSelect">
+                                        Weapon&nbsp;&nbsp;<i class="fa fa-eye"></i>
+                                    </label>
+                                    <select class="form-select" id="weaponsSelect"></select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="teamsRadio" id="allies"
+                                            value="allies" checked="checked">
+                                        <label class="form-check-label" for="allies">Allies</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="teamsRadio" id="enemies"
+                                            value="enemies">
+                                        <label class="form-check-label" for="enemies">Enemies</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <button class="btn btn-fuchsia" id="insertRow" type="button"><i
+                                            class="fa fa-plus"></i>
+                                        <b>Add</b></button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <button class="btn btn-fuchsia" id="insertRow" type="button"><i class="fa fa-plus"></i>
-                                <b>Add</b></button>
+                    <br><br>
+                    <div class="row">
+                        <div class="table-responsive scrollable">
+                            <table id="pedsTable" class="table transparent">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">MaxHealth</th>
+                                        <th scope="col">Armour</th>
+                                        <th scope="col">Scenario</th>
+                                        <th scope="col">Weapon</th>
+                                        <th scope="col">Team</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col align-self-end">
+                            <button class="btn btn-fuchsia float-right" id="spawn" type="button"><i
+                                    class="fa fa-fire"></i>
+                                <b>Spawn</b></button>
                         </div>
 
                     </div>
                 </div>
-            </div>
-            <br><br>
-            <div class="row">
-                <div class="table-responsive scrollable">
-                    <table id="pedsTable" class="table transparent">
-                        <thead>
-                            <tr>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Model</th>
-                                <th scope="col">MaxHealth</th>
-                                <th scope="col">Armour</th>
-                                <th scope="col">Scenario</th>
-                                <th scope="col">Weapon</th>
-                                <th scope="col">Team</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <div class="tab-pane fade" id="bookmarks" role="tabpanel" aria-labelledby="bookmarks-tab">
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col align-self-end">
-                    <button class="btn btn-fuchsia float-right" id="spawn" type="button"><i class="fa fa-fire"></i>
-                        <b>Spawn</b></button>
-                </div>
-
-            </div>
-
-
-            <br><br>
-
-        </div>
-        <div id="mm" class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
             </div>
         </div>
