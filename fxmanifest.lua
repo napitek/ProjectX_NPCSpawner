@@ -3,7 +3,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 author 'napitek'
-description 'NapiSpawner'
+description 'Projectx_NPCSpawner'
 version '0.0.2'
 
 ui_page 'html/index.html'
