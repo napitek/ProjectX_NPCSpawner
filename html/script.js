@@ -86,6 +86,10 @@ $(function () {
                 break // only one radio can be logically checked;
             }
         }
+
+        //If Model is a Cutscene Model pedsNumber must be only one
+        if (pedModel.startsWith('cs')) pedsNumber = 1;
+
         // Table columns
         cols += '<td><p>' + pedsNumber + '</td>';
         cols += '<td><p>' + pedModel + '</td>';
