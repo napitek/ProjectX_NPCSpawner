@@ -39,7 +39,7 @@ $(function () {
     document.onkeyup = function (data) {
         if (data.which == 27) {
             clearElements();
-            $.post('https://napispawner/exit', JSON.stringify({}));
+            $.post('https://Projectx_NPCSpawner/exit', JSON.stringify({}));
             return
         }
     };
@@ -47,7 +47,7 @@ $(function () {
     // Close Button
     $("#close").click(function () {
         clearElements();
-        $.post('https://napispawner/exit', JSON.stringify({}));
+        $.post('https://Projectx_NPCSpawner/exit', JSON.stringify({}));
         return
     });
 
@@ -129,7 +129,7 @@ $(function () {
         if (table.length > 0) {
             //console.log(JSON.stringify(table));
             //clearElements();
-            $.post('https://napispawner/spawn', JSON.stringify({
+            $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
                 peds: table,
             }));
             return

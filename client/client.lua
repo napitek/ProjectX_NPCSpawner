@@ -1,8 +1,6 @@
 local display = false
 local entities = {}
 
-local pos = GetEntityCoords(GetPlayerPed(-1))
-
 local teams = {{
     name = "allies"
 }, {
@@ -55,32 +53,9 @@ RegisterNUICallback("spawn", function(data)
 
 end)
 
--- DisableControlAction while UI is opened
-Citizen.CreateThread(function()
-    while display do
-        Citizen.Wait(0)
-        DisableControlAction(0, 1, true) -- LookLeftRight
-        DisableControlAction(0, 2, true) -- LookUpDown
-        DisableControlAction(0, 18, true) -- Enter
-        DisableControlAction(0, 21, true) -- disable sprint
-        DisableControlAction(0, 24, true) -- disable attack
-        DisableControlAction(0, 25, true) -- disable aim
-        DisableControlAction(0, 30, true) -- MoveLeftRight
-        DisableControlAction(0, 31, true) -- MoveUpDown
-        DisableControlAction(0, 47, true) -- disable weapon
-        DisableControlAction(0, 58, true) -- disable weapon
-        DisableControlAction(0, 75, true) -- disable exit vehicle
-        DisableControlAction(0, 92, true) -- 
-        DisableControlAction(0, 106, true) -- VehicleMouseControlOverride
-        DisableControlAction(0, 140, true) -- disable melee
-        DisableControlAction(0, 141, true) -- disable melee
-        DisableControlAction(0, 142, true)
-        DisableControlAction(0, 143, true) -- disable melee
-        DisableControlAction(0, 223, true) --
-        DisableControlAction(0, 263, true) -- disable melee
-        DisableControlAction(0, 264, true) -- disable melee
-        DisableControlAction(0, 257, true) -- disable melee
-        DisableControlAction(0, 322, true) -- ESC
+AddEventHandler("onResourceStop", function(resource)
+    if resource == GetCurrentResourceName() then
+        SetDisplay(false)
     end
 end)
 
@@ -107,25 +82,22 @@ function SetDisplay(bool)
 end
 
 function Spawner(loadPeds)
-    -- get source coords
-    local x, y, z = table.unpack(pos)
 
     for _, ped in pairs(loadPeds) do
-        -- print(ped.NPCs)
-        -- print(ped.Model)
-        -- print(ped.Weapon)
-        -- print(ped.Team)
-        -- print()
-        -- print(ped.Quantity)
 
         for i = 1, ped.Quantity, 1 do
+
+            -- get source coords
+            local pos = GetEntityCoords(GetPlayerPed(-1))
+            local x, y, z = table.unpack(pos)
+
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
             while not HasModelLoaded(pedHash) do
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x, y, z, 1, true, false)
+            local newPed = CreatePed(4, pedHash, x, y, z, math.random(0,5), true, false)
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, "a_c_") then
@@ -147,7 +119,7 @@ function Spawner(loadPeds)
 
                 if ped.Scenario ~= "nope" then
                     TaskWanderStandard(newPed, 10.0, 10)
-                    -- sTaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
+                    -- TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
                 end
             end
 
@@ -157,16 +129,18 @@ function Spawner(loadPeds)
             else
                 SetRelationshipBetweenGroups(5, GetHashKey(ped.Team), GetHashKey('PLAYER'))
             end
-
             SetRelationshipBetweenGroups(5, GetHashKey(teams[1].name), GetHashKey(teams[2].name))
 
+            -- TODO: Bug of number of NPC
             -- Just because my server suffers
             -- SetModelAsNoLongerNeeded(newPed)
             -- SetPedAsNoLongerNeeded(newPed) -- despawn when player no longer in the area
 
-            -- table.insert(entities, newPed)
-
+            table.insert(entities, newPed)
+            Wait(1)
         end
     end
     SetDisplay(false)
 end
+
+
