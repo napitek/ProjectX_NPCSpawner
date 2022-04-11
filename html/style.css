@@ -55,7 +55,14 @@ body {
 .btn {
     font-size: 20px !important;
 }
+
 .btn-fuchsia {
     background-color: #ff4081;
     color: #ffffff;
 }
+
+input[type="range"] {
+    accent-color: #ff4081;
+}
+
+

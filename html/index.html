@@ -32,8 +32,8 @@
             <hr>
             <ul class="nav nav-tabs" id="mainTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#configurator"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">Configurator</button>
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#composer"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Composer</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bookmarks"
@@ -42,8 +42,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="mainTabContent">
-                <div class="tab-pane fade show active" id="configurator" role="tabpanel"
-                    aria-labelledby="configurator-tab">
+                <div class="tab-pane fade show active" id="composer" role="tabpanel" aria-labelledby="composer-tab">
                     <br>
                     <div id="pedCard" class="card transparent">
                         <div class="row">
@@ -54,7 +53,7 @@
                                         aria-label="Number of NPCs" id="pedsNumberInput" value="1">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col">
                                 <div class="input-group">
                                     <label class="input-group-text" for="modelSelect">Model&nbsp;&nbsp;<i
                                             class="fa fa-eye"></i></label>
@@ -63,34 +62,43 @@
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <span class="input-group-text">MaxHealth</span>
-                                    <input type="number" min="1" max="100" class="form-control" aria-label="MaxHealth"
-                                        id="maxHealthInput" value="100">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="input-group">
-                                    <span class="input-group-text">Armour</span>
-                                    <input type="number" min="1" max="100" class="form-control" aria-label="Armour"
-                                        id="armourInput" value="100">
-                                </div>
-                            </div>
-
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="scenariosSelect">ScenarioInPlace</label>
+                                    <label class="input-group-text" for="scenariosSelect">Scenario</label>
                                     <select class="form-select" id="scenariosSelect"></select>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col">
                                 <div class="input-group">
                                     <label class="input-group-text" for="weaponsSelect">
                                         Weapon&nbsp;&nbsp;<i class="fa fa-eye"></i>
                                     </label>
                                     <select class="form-select" id="weaponsSelect"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="maxHealthRange">MaxHealth&nbsp;</label>
+                                    <input type="range" name="maxHealthRange" id="maxHealthRange" value="30" min="10"
+                                        max="100" step="10" oninput="maxHealthOption.value = maxHealthRange.value">
+                                    <output name="maxHealthOption" id="maxHealthOption">30</output>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="armourRange">Armour&nbsp;</label>
+                                    <input type="range" name="armourRange" id="armourRange" value="30" min="10"
+                                        max="100" step="10" oninput="armourOption.value = armourRange.value">
+                                    <output name="armourOption" id="armourOption">30</output>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="accuracyRange">Accuracy&nbsp;</label>
+                                    <input type="range" name="accuracyRange" id="accuracyRange" value="30" min="10"
+                                        max="100" step="10" oninput="accuracyOption.value = accuracyRange.value">
+                                    <output name="accuracyOption" id="accuracyOption">30</output>
                                 </div>
                             </div>
                             <div class="col">

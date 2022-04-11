@@ -2,8 +2,9 @@ $(function () {
 
     let pedsNumberInput = $('#pedsNumberInput');
     let modelSelect = $('#modelSelect');
-    let maxHealthInput = $('#maxHealthInput');
-    let armourInput = $('#armourInput');
+    let maxHealthOption = $('#maxHealthOption');
+    let armourOption = $('#armourOption');
+    let accuracyOption = $('#armourOption');
     let scenariosSelect = $('#scenariosSelect');
     let weaponsSelect = $('#weaponsSelect');
 
@@ -61,8 +62,8 @@ $(function () {
         //TODO: Write only once
         let pedsNumber = document.getElementById('pedsNumberInput').value;
         let pedModel = document.getElementById('modelSelect').value;
-        let pedMaxHealth = document.getElementById('maxHealthInput').value;
-        let pedArmour = document.getElementById('armourInput').value;
+        let pedMaxHealth = document.getElementById('maxHealthOption').value;
+        let pedArmour = document.getElementById('armourOption').value;
         let pedScenario = document.getElementById('scenariosSelect').value;
         let pedWeapon = document.getElementById('weaponsSelect').value;
         let teamsRadios = document.getElementsByName('teamsRadio');
@@ -76,7 +77,11 @@ $(function () {
             if (pedModel.startsWith('a_c_')) {
                 pedScenario = 'nope';
             } else {
-                pedScenario = 'WORLD_HUMAN_SMOKING'; //TODO: change pedScenario fallback
+                /*$.getJSON("data.json", function (data) {
+                    pedScenario = data.scenarios[Math.floor(Math.random() * data.scenarios.length)];
+                    console.log(pedScenario);
+                });*/
+                pedScenario = 'WORLD_HUMAN_SMOKING'; //TODO: fill with random scenario from json
             }
         }
 

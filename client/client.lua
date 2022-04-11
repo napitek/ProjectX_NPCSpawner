@@ -97,7 +97,7 @@ function Spawner(loadPeds)
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x, y, z, math.random(0,5), true, false)
+            local newPed = CreatePed(4, pedHash, x, y, z, math.random(0, 5), true, false)
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, "a_c_") then
@@ -141,6 +141,6 @@ function Spawner(loadPeds)
         end
     end
     SetDisplay(false)
+    exports['mythic_notify']:DoHudText('inform', 'Hype! Custom Styling!', { ['background-color'] = '#ffffff', ['color'] = '#000000' })
 end
-
 
