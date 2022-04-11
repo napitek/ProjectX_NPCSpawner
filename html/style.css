@@ -27,13 +27,15 @@ body {
 .nav-link {
     color: #888888;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
     color: #000000;
     background-color: #E9EEEF;
-    border-color:rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
 }
 
-.nav-pills > li > a {
+.nav-pills>li>a {
     border-radius: 0;
 }
 
@@ -42,12 +44,12 @@ body {
     border-color: #ff4081 !important;
 }
 
-.transparent{
+.transparent {
     background: rgba(0, 0, 0, 0) !important;
     color: #ffffff !important;
 }
 
-.scrollable{
+.scrollable {
     height: 350px !important;
     overflow-y: scroll;
 }
@@ -64,5 +66,3 @@ body {
 input[type="range"] {
     accent-color: #ff4081;
 }
-
-

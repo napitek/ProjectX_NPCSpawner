@@ -62,12 +62,17 @@ $(function () {
         //TODO: Write only once
         let pedsNumber = document.getElementById('pedsNumberInput').value;
         let pedModel = document.getElementById('modelSelect').value;
-        let pedMaxHealth = document.getElementById('maxHealthOption').value;
-        let pedArmour = document.getElementById('armourOption').value;
         let pedScenario = document.getElementById('scenariosSelect').value;
         let pedWeapon = document.getElementById('weaponsSelect').value;
+        let pedMaxHealth = document.getElementById('maxHealthOption').value;
+        let pedArmour = document.getElementById('armourOption').value;
+        let pedAccuracy = document.getElementById('accuracyOption').value;
         let teamsRadios = document.getElementsByName('teamsRadio');
-        
+
+        console.log(pedMaxHealth);
+        console.log(pedArmour);
+        console.log(pedAccuracy);
+
         let selectedTeam = 'allies';
 
         if (pedModel == null || pedModel == 'Choose...') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
@@ -98,10 +103,11 @@ $(function () {
         // Table columns
         cols += '<td><p>' + pedsNumber + '</td>';
         cols += '<td><p>' + pedModel + '</td>';
-        cols += '<td><p>' + pedMaxHealth + '</td>';
-        cols += '<td><p>' + pedArmour + '</td>';
         cols += '<td><p>' + pedScenario + '</td>';
         cols += '<td><p>' + pedWeapon + '</td>';
+        cols += '<td><p>' + pedMaxHealth + '</td>';
+        cols += '<td><p>' + pedArmour + '</td>';
+        cols += '<td><p>' + pedAccuracy + '</td>';
         cols += '<td><p>' + selectedTeam + '</td>';
         cols += '<td><button class="btn btn-danger" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
 

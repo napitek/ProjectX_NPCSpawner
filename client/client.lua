@@ -109,8 +109,7 @@ function Spawner(loadPeds)
                 SetPedCombatAttributes(newPed, 46, true) -- AlwaysFight
                 SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
-
-                -- SetPedAccuracy(newPed, 100)
+                -- SetPedAccuracy(newPed, ped.Accuracy)
 
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
@@ -118,8 +117,8 @@ function Spawner(loadPeds)
                 end
 
                 if ped.Scenario ~= "nope" then
-                    TaskWanderStandard(newPed, 10.0, 10)
-                    -- TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
+                    -- TaskWanderStandard(newPed, 10.0, 10)
+                    TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
                 end
             end
 
@@ -141,6 +140,5 @@ function Spawner(loadPeds)
         end
     end
     SetDisplay(false)
-    exports['mythic_notify']:DoHudText('inform', 'Hype! Custom Styling!', { ['background-color'] = '#ffffff', ['color'] = '#000000' })
 end
 
