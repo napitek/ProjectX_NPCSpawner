@@ -1,12 +1,9 @@
 $(function () {
 
-    let pedsNumberInput = $('#pedsNumberInput');
     let modelSelect = $('#modelSelect');
-    let maxHealthOption = $('#maxHealthOption');
-    let armourOption = $('#armourOption');
-    let accuracyOption = $('#armourOption');
     let scenariosSelect = $('#scenariosSelect');
     let weaponsSelect = $('#weaponsSelect');
+    let walkCheckBox = $('#walkCheckBox');
 
     display(false)
 
@@ -34,6 +31,15 @@ $(function () {
 
     weaponsSelect.change(function () {
         //weaponImage.src = "https://docs.fivem.net/peds/" + $(this).val() + ".webp";
+    });
+
+    // scenario disabled by checked walk    
+    walkCheckBox.change(function () {
+        if (walkCheckBox.is(':checked')) {
+            scenariosSelect.attr("disabled", true);
+        } else {
+            scenariosSelect.removeAttr('disabled');
+        }
     });
 
     // ESC Handling
@@ -67,6 +73,7 @@ $(function () {
         let pedMaxHealth = document.getElementById('maxHealthOption').value;
         let pedArmour = document.getElementById('armourOption').value;
         let pedAccuracy = document.getElementById('accuracyOption').value;
+        let pedWalk = document.getElementById('walkCheckBox').checked;
         let teamsRadios = document.getElementsByName('teamsRadio');
 
         console.log(pedMaxHealth);
@@ -81,12 +88,10 @@ $(function () {
         if (pedScenario == null || pedScenario == 'Choose...') {
             if (pedModel.startsWith('a_c_')) {
                 pedScenario = 'nope';
+            } else if(pedWalk) {
+                pedScenario = 'walking';
             } else {
-                /*$.getJSON("data.json", function (data) {
-                    pedScenario = data.scenarios[Math.floor(Math.random() * data.scenarios.length)];
-                    console.log(pedScenario);
-                });*/
-                pedScenario = 'WORLD_HUMAN_SMOKING'; //TODO: fill with random scenario from json
+                pedScenario = 'WORLD_HUMAN_SMOKING';
             }
         }
 
@@ -103,13 +108,14 @@ $(function () {
         // Table columns
         cols += '<td><p>' + pedsNumber + '</td>';
         cols += '<td><p>' + pedModel + '</td>';
-        cols += '<td><p>' + pedScenario + '</td>';
         cols += '<td><p>' + pedWeapon + '</td>';
+        cols += '<td><p>' + pedWalk + '</td>';
+        cols += '<td><p>' + pedScenario + '</td>';
         cols += '<td><p>' + pedMaxHealth + '</td>';
         cols += '<td><p>' + pedArmour + '</td>';
         cols += '<td><p>' + pedAccuracy + '</td>';
         cols += '<td><p>' + selectedTeam + '</td>';
-        cols += '<td><button class="btn btn-danger" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
+        cols += '<td><button class="btn btn-secondary" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
 
         // Insert the columns inside a row
         newRow.append(cols);
@@ -123,6 +129,7 @@ $(function () {
     $("table").on("click", "#showImage", function (event) {
 
     });
+
     // Remove row when delete btn is clicked
     $("table").on("click", "#deleteRow", function (event) {
         $(this).closest("tr").remove();
@@ -151,7 +158,6 @@ $(function () {
         } else {
             console.log('Not PEDS to Spawn');
         }
-
     });
 
     function display(bool) {

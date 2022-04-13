@@ -17,7 +17,8 @@ files {
 
 client_script {
     '@NativeUI/NativeUI.lua',
-    'client/client.lua'
+    'client/client.lua',
+    'cluent/config.lua'
 }
 
 server_scripts {

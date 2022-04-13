@@ -91,13 +91,16 @@ function Spawner(loadPeds)
             local pos = GetEntityCoords(GetPlayerPed(-1))
             local x, y, z = table.unpack(pos)
 
+            local randomFactorial = math.random(-5, 5)
+
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
             while not HasModelLoaded(pedHash) do
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x, y, z, math.random(0, 5), true, false)
+            local newPed = CreatePed(4, pedHash, x + randomFactorial, y + randomFactorial, z, randomFactorial, true,
+                false)
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, "a_c_") then
@@ -109,16 +112,24 @@ function Spawner(loadPeds)
                 SetPedCombatAttributes(newPed, 46, true) -- AlwaysFight
                 SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
-                -- SetPedAccuracy(newPed, ped.Accuracy)
+                SetPedAccuracy(newPed, ped.Accuracy)
 
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
                     GiveWeaponToPed(newPed, GetHashKey(ped.Weapon), 2000, true, false)
                 end
 
-                if ped.Scenario ~= "nope" then
-                    -- TaskWanderStandard(newPed, 10.0, 10)
-                    TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
+                -- Assign walk or scenario based on values
+                if (ped.Scenario == "walking") then
+                    TaskWanderStandard(newPed, 10.0, 10) -- TODO: Implement TaskWanderInArea
+                    -- TaskWanderInArea(newPed, x, y, z, 0)
+                else
+                    if (ped.Scenario ~= "nope") then
+                        TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
+                    else
+                        TaskStartScenarioInPlace(newPed, 'WORLD_HUMAN_SMOKING', 0, true)
+                    end
+
                 end
             end
 
@@ -136,7 +147,7 @@ function Spawner(loadPeds)
             -- SetPedAsNoLongerNeeded(newPed) -- despawn when player no longer in the area
 
             table.insert(entities, newPed)
-            Wait(1)
+            Wait(100)
         end
     end
     SetDisplay(false)
