@@ -76,10 +76,6 @@ $(function () {
         let pedWalk = document.getElementById('walkCheckBox').checked;
         let teamsRadios = document.getElementsByName('teamsRadio');
 
-        console.log(pedMaxHealth);
-        console.log(pedArmour);
-        console.log(pedAccuracy);
-
         let selectedTeam = 'allies';
 
         if (pedModel == null || pedModel == 'Choose...') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
@@ -196,15 +192,26 @@ $(function () {
                 //console.log(pedValue);
                 modelSelect.append($('<option></option>').text(pedValue).attr('value', pedValue));
             });
+            new TomSelect("#modelSelect",{
+                create: true,
+            });
             $.each(data.weapons, function (weaponKey, weaponValue) {
                 //console.log(weaponValue);
                 weaponsSelect.append($('<option></option>').text(weaponValue.desc).attr('value', weaponValue.hashkey));
+            });
+            new TomSelect("#weaponsSelect",{
+                create: true,
             });
             $.each(data.scenarios, function (scenarioKey, scenarioValue) {
                 //console.log(pedValue);
                 scenariosSelect.append($('<option></option>').text(scenarioValue).attr('value', scenarioValue));
             });
+            new TomSelect("#scenariosSelect",{
+                create: true,
+            });
         });
+        
+        
     }
 
     function startsWith(str, word) {
