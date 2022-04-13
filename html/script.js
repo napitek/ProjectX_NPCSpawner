@@ -78,10 +78,10 @@ $(function () {
 
         let selectedTeam = 'allies';
 
-        if (pedModel == null || pedModel == 'Choose...') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
-        if (pedWeapon == null || pedWeapon == 'Choose...' || pedModel.startsWith('a_c_')) pedWeapon = 'nope';
+        if (pedModel == null || pedModel == '') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
+        if (pedWeapon == null || pedWeapon == '' || pedModel.startsWith('a_c_')) pedWeapon = 'nope';
 
-        if (pedScenario == null || pedScenario == 'Choose...') {
+        if (pedScenario == null || pedScenario == '') {
             if (pedModel.startsWith('a_c_')) {
                 pedScenario = 'nope';
             } else if(pedWalk) {
@@ -176,15 +176,15 @@ $(function () {
     function fillDropdown() {
 
         modelSelect.empty();
-        modelSelect.append('<option selected="true" disabled>Choose...</option>');
+        modelSelect.append('<option selected="true" disabled></option>');
         modelSelect.prop('selectedIndex', 0);
 
         weaponsSelect.empty();
-        weaponsSelect.append('<option selected="true" disabled>Choose...</option>');
+        weaponsSelect.append('<option selected="true" disabled></option>');
         weaponsSelect.prop('selectedIndex', 0);
 
         scenariosSelect.empty();
-        scenariosSelect.append('<option selected="true" disabled>Choose...</option>');
+        scenariosSelect.append('<option selected="true" disabled></option>');
         scenariosSelect.prop('selectedIndex', 0);
 
         $.getJSON("data.json", function (data) {
