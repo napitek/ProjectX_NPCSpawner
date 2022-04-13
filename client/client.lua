@@ -91,7 +91,7 @@ function Spawner(loadPeds)
             local pos = GetEntityCoords(GetPlayerPed(-1))
             local x, y, z = table.unpack(pos)
 
-            local randomFactorial = math.random(-5, 5)
+            math.random(-5, 5)
 
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
@@ -99,7 +99,7 @@ function Spawner(loadPeds)
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x + randomFactorial, y + randomFactorial, z, randomFactorial, true,
+            local newPed = CreatePed(4, pedHash, x + math.random(-5, 5), y + math.random(-5, 5), z, math.random(-5, 5), true,
                 false)
 
             -- If we want to spawn animal PED

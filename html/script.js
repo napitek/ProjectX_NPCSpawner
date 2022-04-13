@@ -192,23 +192,17 @@ $(function () {
                 //console.log(pedValue);
                 modelSelect.append($('<option></option>').text(pedValue).attr('value', pedValue));
             });
-            new TomSelect("#modelSelect",{
-                create: true,
-            });
+            new TomSelect("#modelSelect",{});
             $.each(data.weapons, function (weaponKey, weaponValue) {
                 //console.log(weaponValue);
                 weaponsSelect.append($('<option></option>').text(weaponValue.desc).attr('value', weaponValue.hashkey));
             });
-            new TomSelect("#weaponsSelect",{
-                create: true,
-            });
+            new TomSelect("#weaponsSelect",{});
             $.each(data.scenarios, function (scenarioKey, scenarioValue) {
                 //console.log(pedValue);
                 scenariosSelect.append($('<option></option>').text(scenarioValue).attr('value', scenarioValue));
             });
-            new TomSelect("#scenariosSelect",{
-                create: true,
-            });
+            new TomSelect("#scenariosSelect",{});
         });
         
         
