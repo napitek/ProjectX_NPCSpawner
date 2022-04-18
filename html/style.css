@@ -24,7 +24,14 @@ body {
     font-size: 20px;
 }
 
-#pedsNumberInput, .input-group-text, .item, .option {
+.input-group-text,
+.item,
+.option,
+#pedsNumberInput,
+input#modelSelect-ts-control,
+input#weaponsSelect-ts-control,
+input#scenariosSelect-ts-control
+{
     font-size: 20px;
 }
 
@@ -54,7 +61,7 @@ body {
 }
 
 .scrollable {
-    height: 350px !important;
+    height: 900px !important;
     overflow-y: scroll;
 }
 
@@ -73,4 +80,25 @@ body {
 
 input[type="range"] {
     accent-color: #ff4081;
+}
+
+@media  screen and (max-width: 1366px) {
+    #app {
+        padding: 25px;
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(44, 44, 44);
+        height: 750px;
+        width: 1350px;
+        border: 2px solid #ff4081;
+        border-radius: 7px;
+    }
+
+    .scrollable {
+        height: 650px !important;
+        overflow-y: scroll;
+    }
 }

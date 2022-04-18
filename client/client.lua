@@ -1,5 +1,6 @@
 local display = false
 local entities = {}
+-- local tags = exports['ProjectX_Tags'] 
 
 local teams = {{
     name = "allies"
@@ -13,6 +14,9 @@ end
 
 -- Show UI
 RegisterCommand("nsp", function(source, args)
+    -- if(tags:isStaff()) then
+        -- SetDisplay(not display)
+    -- end
     SetDisplay(not display)
 end)
 
@@ -38,6 +42,7 @@ end)
 -- EXIT Callback
 RegisterNUICallback("exit", function(data)
     chat("NPCSpawner closed", {0, 255, 0})
+    print(GetEntityHeading(GetPlayerPed(-1)))
     SetDisplay(false)
 end)
 
@@ -82,7 +87,6 @@ function SetDisplay(bool)
 end
 
 function Spawner(loadPeds)
-
     for _, ped in pairs(loadPeds) do
 
         for i = 1, ped.Quantity, 1 do
