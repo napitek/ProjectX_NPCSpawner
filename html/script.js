@@ -77,6 +77,7 @@ $(function () {
         let teamsRadios = document.getElementsByName('teamsRadio');
 
         let selectedTeam = 'allies';
+        
 
         if (pedModel == null || pedModel == '') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
         if (pedWeapon == null || pedWeapon == '' || pedModel.startsWith('a_c_')) pedWeapon = 'nope';
@@ -143,12 +144,23 @@ $(function () {
 
     // Spawn Peds
     $("#spawn").click(function () {
+        let spawnTypeRadios = document.getElementsByName('spawnTypeRadio');
+        let selectedSpawnType = 'line';
+
+        for (var i = 0, length = spawnTypeRadios.length; i < length; i++) {
+            if (spawnTypeRadios[1].checked) {
+                selectedSpawnType = 'area';
+                break; // only one radio can be logically checked;
+            }
+        }
+
         let table = $('#pedsTable').tableToJSON();
         if (table.length > 0) {
             //console.log(JSON.stringify(table));
             //clearElements();
             $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
                 peds: table,
+                type: selectedSpawnType,
             }));
             return
         } else {

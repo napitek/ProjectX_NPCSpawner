@@ -15,10 +15,11 @@ files {
     'html/data.json'
 }
 
+shared_script 'config.lua'
+
 client_script {
     '@NativeUI/NativeUI.lua',
-    'client/client.lua',
-    'cluent/config.lua'
+    'client/client.lua'
 }
 
 server_scripts {

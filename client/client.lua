@@ -2,35 +2,41 @@ local display = false
 local entities = {}
 -- local tags = exports['ProjectX_Tags'] 
 
-local teams = {{
-    name = "allies"
-}, {
-    name = "enemies"
-}}
-
-for i = 1, #teams, 1 do
-    AddRelationshipGroup(teams[i].name)
+for i, team in pairs(Config.Teams) do
+    AddRelationshipGroup(team)
 end
 
 -- Show UI
 RegisterCommand("nsp", function(source, args)
     -- if(tags:isStaff()) then
-        -- SetDisplay(not display)
+    -- SetDisplay(not display)
     -- end
     SetDisplay(not display)
 end)
 
--- Show Entities
-RegisterCommand("nspshow", function(source, args)
-    print(entities)
-end)
-
 -- Delete PEDS
 RegisterCommand("nspdel", function(source, args)
-    for _, ped in pairs(entities) do
-        DeleteEntity(ped)
-        table.remove(entities, ped)
+    local totalPeds = tonumber(args[1])
+    if totalPeds ~= nil then
+        for totalPeds = 1, totalPeds, 1 do
+            for _, ped in pairs(entities) do
+                if DoesEntityExist(ped) then
+                    DeleteEntity(ped)
+                    table.remove(entities, ped)
+                end
+                Wait(10)
+            end
+        end
+    else
+        for _, ped in pairs(entities) do
+            if DoesEntityExist(ped) then
+                DeleteEntity(ped)
+                table.remove(entities, ped)
+            end
+            Wait(10)
+        end
     end
+
 end)
 
 -- ERROR Callback
@@ -41,21 +47,19 @@ end)
 
 -- EXIT Callback
 RegisterNUICallback("exit", function(data)
-    chat("NPCSpawner closed", {0, 255, 0})
-    print(GetEntityHeading(GetPlayerPed(-1)))
-    SetDisplay(false)
-end)
-
-RegisterNUICallback("main", function(data)
-    chat(data.text, {0, 255, 0})
+    exports['mythic_notify']:DoHudText('inform', 'NPCSpawner closed', {
+        ['background-color'] = Config.NotifyBackground,
+        ['color'] = Config.NotifyTextColor
+    })
     SetDisplay(false)
 end)
 
 RegisterNUICallback("spawn", function(data)
-    -- local pedsJson = json.encode(data.peds)
-    -- print(pedsJson)
-    Spawner(data.peds)
-
+    exports['mythic_notify']:DoHudText('inform', 'NPCs spawned', {
+        ['background-color'] = Config.NotifyPrimaryColor,
+        ['color'] = Config.NotifyTextColor
+    })
+    Spawner(data.peds, data.type)
 end)
 
 AddEventHandler("onResourceStop", function(resource)
@@ -86,16 +90,15 @@ function SetDisplay(bool)
     })
 end
 
-function Spawner(loadPeds)
+function Spawner(loadPeds, spawnType)
     for _, ped in pairs(loadPeds) do
 
         for i = 1, ped.Quantity, 1 do
 
             -- get source coords
             local pos = GetEntityCoords(GetPlayerPed(-1))
+            local heading = GetEntityHeading(GetPlayerPed(-1))
             local x, y, z = table.unpack(pos)
-
-            math.random(-5, 5)
 
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
@@ -103,11 +106,10 @@ function Spawner(loadPeds)
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x + math.random(-5, 5), y + math.random(-5, 5), z, math.random(-5, 5), true,
-                false)
+            local newPed = CreatePed(4, pedHash, x + i, y - i, z, heading, true, false)
 
             -- If we want to spawn animal PED
-            if string.starts(ped.Model, "a_c_") then
+            if string.starts(ped.Model, Config.AnimalPedPrefix) then
                 TaskWanderStandard(newPed, 10.0, 10)
             else
                 SetPedFleeAttributes(newPed, 0, true) -- BOH but it work
@@ -131,19 +133,17 @@ function Spawner(loadPeds)
                     if (ped.Scenario ~= "nope") then
                         TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
                     else
-                        TaskStartScenarioInPlace(newPed, 'WORLD_HUMAN_SMOKING', 0, true)
+                        TaskStartScenarioInPlace(newPed, Config.DefaultScenario, 0, true)
                     end
-
                 end
             end
-
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
             if ped.Team == "allies" then
                 SetRelationshipBetweenGroups(0, GetHashKey(ped.Team), GetHashKey('PLAYER'))
             else
                 SetRelationshipBetweenGroups(5, GetHashKey(ped.Team), GetHashKey('PLAYER'))
             end
-            SetRelationshipBetweenGroups(5, GetHashKey(teams[1].name), GetHashKey(teams[2].name))
+            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
 
             -- TODO: Bug of number of NPC
             -- Just because my server suffers
