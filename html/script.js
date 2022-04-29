@@ -35,7 +35,7 @@ $(function () {
 
     // scenario disabled by checked walk    
     walkCheckBox.change(function () {
-        if (walkCheckBox.is(':checked')) {
+        if (walkCheckBox.prop('checked')) {
             scenariosSelect.attr("disabled", true);
         } else {
             scenariosSelect.removeAttr('disabled');
@@ -132,14 +132,9 @@ $(function () {
         $(this).closest("tr").remove();
     });
 
-    // Reset Peds Table
+    // Reset table
     $("#resetTable").click(function () {
-        clearElements();
-        //wait 1 second for dropdown refill
-        setTimeout(function () {
-            fillDropdown();
-        }, 1000);
-
+        $("tbody").children().remove();
     });
 
     // Spawn Peds
@@ -175,13 +170,6 @@ $(function () {
         } else {
             $("#app").hide();
         }
-    }
-
-    function clearElements() {
-        modelSelect.empty();
-        weaponsSelect.empty();
-        scenariosSelect.empty();
-        $("tbody").children().remove();
     }
 
     //This function fills the Dropdowns of PED and WEAPONS from data.json file

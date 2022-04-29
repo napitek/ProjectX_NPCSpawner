@@ -1,6 +1,6 @@
 local display = false
 local entities = {}
--- local tags = exports['ProjectX_Tags'] 
+local tags = exports['ProjectX_Tags'] 
 
 for i, team in pairs(Config.Teams) do
     AddRelationshipGroup(team)
@@ -8,9 +8,9 @@ end
 
 -- Show UI
 RegisterCommand("nsp", function(source, args)
-    -- if(tags:isStaff()) then
-    -- SetDisplay(not display)
-    -- end
+    if(tags:isStaff()) then
+        SetDisplay(not display)
+    end
     SetDisplay(not display)
 end)
 
@@ -140,8 +140,8 @@ function Spawner(loadPeds, spawnType)
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
             -- isStuff()
-            local napitek = false
-            if napitek then
+            
+            if(tags:isStaff()) then
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
             else
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
