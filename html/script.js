@@ -45,7 +45,7 @@ $(function () {
     // ESC Handling
     document.onkeyup = function (data) {
         if (data.which == 27) {
-            clearElements();
+            //clearElements();
             $.post('https://Projectx_NPCSpawner/exit', JSON.stringify({}));
             return
         }
@@ -53,7 +53,7 @@ $(function () {
 
     // Close Button
     $("#close").click(function () {
-        clearElements();
+        //clearElements();
         $.post('https://Projectx_NPCSpawner/exit', JSON.stringify({}));
         return
     });
