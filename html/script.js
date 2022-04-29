@@ -51,7 +51,7 @@ $(function () {
         }
     };
 
-    // Close Button
+    // Close Buttons
     $("#close").click(function () {
         //clearElements();
         $.post('https://Projectx_NPCSpawner/exit', JSON.stringify({}));

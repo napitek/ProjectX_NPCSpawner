@@ -11,23 +11,18 @@ RegisterCommand("nsp", function(source, args)
     if(tags:isStaff()) then
         SetDisplay(not display)
     end
-    SetDisplay(not display)
+    -- SetDisplay(not display)
 end)
 
 -- Delete PEDS
 RegisterCommand("nspdel", function(source, args)
-    local totalPeds = tonumber(args[1])
-    if totalPeds ~= nil then
-        for totalPeds = 1, totalPeds, 1 do
-            for _, ped in pairs(entities) do
-                if DoesEntityExist(ped) then
-                    DeleteEntity(ped)
-                    table.remove(entities, ped)
-                end
-                Wait(10)
-            end
-        end
-    else
+    local totalPeople = tonumber(args[1])
+
+    if totalPeds == nil then
+        totalPeds = 1
+    end
+
+    for i=1,totalPeople, 1 do
         for _, ped in pairs(entities) do
             if DoesEntityExist(ped) then
                 DeleteEntity(ped)
@@ -36,8 +31,7 @@ RegisterCommand("nspdel", function(source, args)
             Wait(10)
         end
     end
-
-end)
+end) 
 
 -- ERROR Callback
 RegisterNUICallback("error", function(data)
@@ -141,6 +135,8 @@ function Spawner(loadPeds, spawnType)
 
             -- isStuff()
             
+            --local napitek = true
+            --if napitek then
             if(tags:isStaff()) then
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
             else
