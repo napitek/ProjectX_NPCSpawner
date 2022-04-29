@@ -127,10 +127,6 @@ function Spawner(loadPeds, spawnType)
                 end
             end
 
-            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
-            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
-            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
-
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
             -- isStuff()
@@ -142,6 +138,10 @@ function Spawner(loadPeds, spawnType)
             else
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
             end
+
+            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
 
             -- TODO: Bug of number of NPC
             -- Just because my server suffers
