@@ -41,7 +41,7 @@ end)
 
 -- ERROR Callback
 RegisterNUICallback("error", function(data)
-    chat(data.error, {255, 0, 0})
+    -- TODO: Notify
     SetDisplay(false)
 end)
 
@@ -71,14 +71,6 @@ end)
 -- Just util function
 function string.starts(String, Start)
     return string.sub(String, 1, string.len(Start)) == Start
-end
-
-function chat(str, color)
-    TriggerEvent('chat:addMessage', {
-        color = color,
-        multiline = true,
-        args = {str}
-    })
 end
 
 function SetDisplay(bool)
@@ -140,23 +132,32 @@ function Spawner(loadPeds, spawnType)
                     end
                 end
             end
-            SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
-            if ped.Team == "allies" then
-                SetRelationshipBetweenGroups(0, GetHashKey(ped.Team), GetHashKey('PLAYER'))
-            else
-                SetRelationshipBetweenGroups(5, GetHashKey(ped.Team), GetHashKey('PLAYER'))
-            end
+
             SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
+
+            SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
+
+            -- isStuff()
+            local napitek = false
+            if napitek then
+                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+            else
+                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
+            end
 
             -- TODO: Bug of number of NPC
             -- Just because my server suffers
             -- SetModelAsNoLongerNeeded(newPed)
             -- SetPedAsNoLongerNeeded(newPed) -- despawn when player no longer in the area
-
+            
             table.insert(entities, newPed)
             Wait(100)
         end
     end
+
+    
     SetDisplay(false)
 end
 
