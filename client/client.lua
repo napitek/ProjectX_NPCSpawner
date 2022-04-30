@@ -53,7 +53,7 @@ RegisterNUICallback("spawn", function(data)
         ['background-color'] = Config.NotifyPrimaryColor,
         ['color'] = Config.NotifyTextColor
     })
-    Spawner(data.peds, data.type)
+    Spawner(data.peds, data.drop, data.type)
 end)
 
 AddEventHandler("onResourceStop", function(resource)
@@ -76,7 +76,7 @@ function SetDisplay(bool)
     })
 end
 
-function Spawner(loadPeds, spawnType)
+function Spawner(loadPeds, dropWeapon, spawnType)
     for _, ped in pairs(loadPeds) do
 
         for i = 1, ped.Quantity, 1 do
@@ -107,8 +107,8 @@ function Spawner(loadPeds, spawnType)
                 SetPedAccuracy(newPed, ped.Accuracy)
 
                 -- Enable/disable weapon drop of peds after dead
-                SetPedDropsWeaponsWhenDead(newPed, Config.DropWeaponAfterDead)
-
+                SetPedDropsWeaponsWhenDead(newPed, dropWeapon)
+                
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
                     GiveWeaponToPed(newPed, GetHashKey(ped.Weapon), 2000, true, false)
@@ -131,17 +131,26 @@ function Spawner(loadPeds, spawnType)
 
             -- isStuff()
             
-            --local napitek = true
-            --if napitek then
+            --- local napitek = true
+            -- if napitek then
             if(tags:isStaff()) then
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
             else
-                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
+                if(ped.Team == "allies") then
+                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
+                else
+                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[2]))
+                end
             end
 
             SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
+
+            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[2]), GetHashKey("PLAYER"))
+            SetRelationshipBetweenGroups(5, GetHashKey("PLAYER"), GetHashKey(Config.Teams[2]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey("PLAYER"))
+            SetRelationshipBetweenGroups(0, GetHashKey("PLAYER"), GetHashKey(Config.Teams[1]))
 
             -- TODO: Bug of number of NPC
             -- Just because my server suffers

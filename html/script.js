@@ -139,6 +139,7 @@ $(function () {
 
     // Spawn Peds
     $("#spawn").click(function () {
+        let pedDropWeapon = document.getElementById('dropWeaponCheckBox').checked;
         let spawnTypeRadios = document.getElementsByName('spawnTypeRadio');
         let selectedSpawnType = 'line';
 
@@ -151,10 +152,9 @@ $(function () {
 
         let table = $('#pedsTable').tableToJSON();
         if (table.length > 0) {
-            //console.log(JSON.stringify(table));
-            //clearElements();
             $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
                 peds: table,
+                drop: pedDropWeapon,
                 type: selectedSpawnType,
             }));
             return
