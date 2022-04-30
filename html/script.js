@@ -139,7 +139,6 @@ $(function () {
 
     // Spawn Peds
     $("#spawn").click(function () {
-        let pedDropWeapon = document.getElementById('dropWeaponCheckBox').checked;
         let spawnTypeRadios = document.getElementsByName('spawnTypeRadio');
         let selectedSpawnType = 'line';
 
@@ -154,7 +153,6 @@ $(function () {
         if (table.length > 0) {
             $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
                 peds: table,
-                drop: pedDropWeapon,
                 type: selectedSpawnType,
             }));
             return
@@ -192,17 +190,23 @@ $(function () {
                 //console.log(pedValue);
                 modelSelect.append($('<option></option>').text(pedValue).attr('value', pedValue));
             });
-            new TomSelect("#modelSelect",{});
+            new TomSelect("#modelSelect",{
+                persist: true
+            });
             $.each(data.weapons, function (weaponKey, weaponValue) {
                 //console.log(weaponValue);
                 weaponsSelect.append($('<option></option>').text(weaponValue.desc).attr('value', weaponValue.hashkey));
             });
-            new TomSelect("#weaponsSelect",{});
+            new TomSelect("#weaponsSelect",{
+                persist: true
+            });
             $.each(data.scenarios, function (scenarioKey, scenarioValue) {
                 //console.log(pedValue);
                 scenariosSelect.append($('<option></option>').text(scenarioValue).attr('value', scenarioValue));
             });
-            new TomSelect("#scenariosSelect",{});
+            new TomSelect("#scenariosSelect",{
+                persist: true
+            });
         });
         
         

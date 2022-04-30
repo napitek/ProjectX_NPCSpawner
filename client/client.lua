@@ -1,6 +1,6 @@
 local display = false
 local entities = {}
-local tags = exports['ProjectX_Tags'] 
+-- local tags = exports['ProjectX_Tags'] 
 
 for i, team in pairs(Config.Teams) do
     AddRelationshipGroup(team)
@@ -8,10 +8,10 @@ end
 
 -- Show UI
 RegisterCommand("nsp", function(source, args)
-    if(tags:isStaff()) then
-        SetDisplay(not display)
-    end
-    -- SetDisplay(not display)
+    -- if(tags:isStaff()) then
+    --     SetDisplay(not display)
+    -- end
+    SetDisplay(not display)
 end)
 
 -- Delete PEDS
@@ -53,7 +53,7 @@ RegisterNUICallback("spawn", function(data)
         ['background-color'] = Config.NotifyPrimaryColor,
         ['color'] = Config.NotifyTextColor
     })
-    Spawner(data.peds, data.drop, data.type)
+    Spawner(data.peds, data.type)
 end)
 
 AddEventHandler("onResourceStop", function(resource)
@@ -76,7 +76,7 @@ function SetDisplay(bool)
     })
 end
 
-function Spawner(loadPeds, dropWeapon, spawnType)
+function Spawner(loadPeds, spawnType)
     for _, ped in pairs(loadPeds) do
 
         for i = 1, ped.Quantity, 1 do
@@ -107,7 +107,7 @@ function Spawner(loadPeds, dropWeapon, spawnType)
                 SetPedAccuracy(newPed, ped.Accuracy)
 
                 -- Enable/disable weapon drop of peds after dead
-                SetPedDropsWeaponsWhenDead(newPed, dropWeapon)
+                SetPedDropsWeaponsWhenDead(newPed, Config.DropWeaponAfterDead)
                 
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
@@ -131,9 +131,9 @@ function Spawner(loadPeds, dropWeapon, spawnType)
 
             -- isStuff()
             
-            --- local napitek = true
-            -- if napitek then
-            if(tags:isStaff()) then
+            local napitek = true
+            if napitek then
+            -- if(tags:isStaff()) then
                 SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
             else
                 if(ped.Team == "allies") then
@@ -162,7 +162,5 @@ function Spawner(loadPeds, dropWeapon, spawnType)
         end
     end
 
-    
-    SetDisplay(false)
+    -- SetDisplay(false)
 end
-
