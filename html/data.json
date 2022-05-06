@@ -1185,11 +1185,11 @@
         }
     ],
     "scenarios": [
+        "WORLD_HUMAN_SMOKING",
         "WORLD_HUMAN_COP_IDLES",
         "WORLD_HUMAN_BINOCULARS",
         "WORLD_HUMAN_CHEERING",
         "WORLD_HUMAN_DRINKING",
-        "WORLD_HUMAN_SMOKING",
         "WORLD_HUMAN_MOBILE_FILM_SHOCKING",
         "WORLD_HUMAN_GARDENER_PLANT",
         "WORLD_HUMAN_GUARD_STAND",

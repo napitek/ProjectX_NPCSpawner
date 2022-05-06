@@ -39,7 +39,7 @@
                             class="badge bg-secondary">COOMING SOON</span></button>
                 </li>
             </ul>
-            
+
             <div class="tab-content" id="mainTabContent">
                 <div class="tab-pane fade show active" id="composer" role="tabpanel" aria-labelledby="composer-tab">
                     <br>
@@ -99,9 +99,9 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="armourRange">Armour&nbsp;</label>
-                                    <input type="range" name="armourRange" id="armourRange" value="30" min="10"
-                                        max="100" step="10" oninput="armourOption.value = armourRange.value">
-                                    <output name="armourOption" id="armourOption">30</output>
+                                    <input type="range" name="armourRange" id="armourRange" value="0" min="0" max="100"
+                                        step="10" oninput="armourOption.value = armourRange.value">
+                                    <output name="armourOption" id="armourOption">0</output>
                                 </div>
                             </div>
                             <div class="col">
@@ -126,6 +126,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-4">
+                                <label for="relationSelect">Level of relationship between the allies and enemies teams</label>
+                                <div class="input-group">
+                                    <label class="input-group-text" for="relationSelect">
+                                       Relation&nbsp;&nbsp;</i>
+                                    </label>
+                                    <select class="form-select" id="relationSelect" autocomplete="off">
+                                        <option value="0">0 - Companion</option>
+                                        <option value="1">1 - Respect</option>
+                                        <option value="2">2 - Like</option>
+                                        <option value="3">3 - Neutral</option>
+                                        <option value="4">4 - Dislike</option>
+                                        <option value="5" selected>5 - Hate</option>
+                                        <option value="255">255 - Pedestrians</option>
+                                    </select>
+                                </div>
+
+                            </div>
                             <div class="col">
                                 <div class="input-group">
                                     <button class="btn btn-fuchsia" id="insertRow" type="button"><i
@@ -137,7 +155,7 @@
                         </div>
                     </div>
                     <br>
-                    
+
                     <div class="row">
                         <div class="table-responsive">
                             <table id="pedsTable" class="table transparent">
@@ -157,6 +175,7 @@
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </th>
+                                        <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody>

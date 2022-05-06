@@ -77,19 +77,12 @@ $(function () {
         let teamsRadios = document.getElementsByName('teamsRadio');
 
         let selectedTeam = 'allies';
-        
 
         if (pedModel == null || pedModel == '') pedModel = 'a_f_m_beach_01'; //TODO: change pedModel fallback
-        if (pedWeapon == null || pedWeapon == '' || pedModel.startsWith('a_c_')) pedWeapon = 'nope';
+        if (pedWeapon == null || pedWeapon == 'nope' || pedModel.startsWith('a_c_')) pedWeapon = 'nope';
 
-        if (pedScenario == null || pedScenario == '') {
-            if (pedModel.startsWith('a_c_')) {
-                pedScenario = 'nope';
-            } else if(pedWalk) {
-                pedScenario = 'walking';
-            } else {
-                pedScenario = 'WORLD_HUMAN_SMOKING';
-            }
+        if (pedWalk) {
+            pedScenario = 'walking';
         }
 
         for (var i = 0, length = teamsRadios.length; i < length; i++) {
@@ -103,16 +96,17 @@ $(function () {
         if (pedModel.startsWith('cs')) pedsNumber = 1;
 
         // Table columns
-        cols += '<td><p>' + pedsNumber + '</td>';
-        cols += '<td><p>' + pedModel + '</td>';
-        cols += '<td><p>' + pedWeapon + '</td>';
-        cols += '<td><p>' + pedWalk + '</td>';
-        cols += '<td><p>' + pedScenario + '</td>';
-        cols += '<td><p>' + pedMaxHealth + '</td>';
-        cols += '<td><p>' + pedArmour + '</td>';
-        cols += '<td><p>' + pedAccuracy + '</td>';
-        cols += '<td><p>' + selectedTeam + '</td>';
-        cols += '<td><button class="btn btn-secondary" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
+        cols += '<td id="pedsNumber"><p>' + pedsNumber + '</td>';
+        cols += '<td id="pedModel"><p>' + pedModel + '</td>';
+        cols += '<td id="pedWeapon"><p>' + pedWeapon + '</td>';
+        cols += '<td id="pedWalk"><p>' + pedWalk + '</td>';
+        cols += '<td id="pedScenario"><p>' + pedScenario + '</td>';
+        cols += '<td id="pedMaxHealth"><p>' + pedMaxHealth + '</td>';
+        cols += '<td id="pedArmour"><p>' + pedArmour + '</td>';
+        cols += '<td id="pedAccuracy"><p>' + pedAccuracy + '</td>';
+        cols += '<td id="selectedTeam"><p>' + selectedTeam + '</td>';
+        cols += '<td><button class="btn btn-secondary" id="deleteRow"><i class="fa fa-trash"></i></button</td>';
+        cols += '<td><button class="btn btn-fuchsia" id="singleSpawn"><i class="fa fa-fire"></i></button</td>';
 
         // Insert the columns inside a row
         newRow.append(cols);
@@ -137,9 +131,39 @@ $(function () {
         $("tbody").children().remove();
     });
 
-    // Spawn Peds
+    // Spawn Row Peds
+    $("table").on("click", "#singleSpawn", function (event) {
+        let teamsRelation = document.getElementById('relationSelect').value;
+        let spawnTypeRadios = document.getElementsByName('spawnTypeRadio');
+        let row = $(this).closest("tr");
+        let quantity = row.find("#pedsNumber").text();
+        let model = row.find("#pedModel").text();
+        let weapon = row.find("#pedWeapon").text();
+        let walk = row.find("#pedWalk").text();
+        let scenario = row.find("#pedModel").text();
+        let maxHealth = row.find("#pedMaxHealth").text();
+        let armour = row.find("#pedArmour").text();
+        let accuracy = row.find("#pedAccuracy").text();
+        let selectedTeam = row.find("#selectedTeam").text();
+        let selectedSpawnType = 'line';
+
+        let json = [];
+        json.push({ "Quantity": quantity, "Model": model, "Weapon": weapon, "Walk": walk, "Scenario": scenario, "MaxHealth": maxHealth, "Armour": armour, "Accuracy": accuracy, "Team": selectedTeam });
+
+        $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
+            peds: json,
+            type: selectedSpawnType,
+            rel: teamsRelation,
+        }));
+
+        row.css("color","#ff4081");
+        return
+    });
+
+    // Spawn Table Peds
     $("#spawn").click(function () {
         let spawnTypeRadios = document.getElementsByName('spawnTypeRadio');
+        let teamsRelation = document.getElementById('relationSelect').value;
         let selectedSpawnType = 'line';
 
         for (var i = 0, length = spawnTypeRadios.length; i < length; i++) {
@@ -149,11 +173,13 @@ $(function () {
             }
         }
 
-        let table = $('#pedsTable').tableToJSON();
-        if (table.length > 0) {
+        let json = $('#pedsTable').tableToJSON();
+
+        if (json.length > 0) {
             $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
-                peds: table,
+                peds: json,
                 type: selectedSpawnType,
+                rel: teamsRelation,
             }));
             return
         } else {
@@ -172,44 +198,27 @@ $(function () {
 
     //This function fills the Dropdowns of PED and WEAPONS from data.json file
     function fillDropdown() {
-
-        modelSelect.empty();
-        modelSelect.append('<option selected="true" disabled></option>');
-        modelSelect.prop('selectedIndex', 0);
-
-        weaponsSelect.empty();
-        weaponsSelect.append('<option selected="true" disabled></option>');
-        weaponsSelect.prop('selectedIndex', 0);
-
-        scenariosSelect.empty();
-        scenariosSelect.append('<option selected="true" disabled></option>');
-        scenariosSelect.prop('selectedIndex', 0);
-
         $.getJSON("data.json", function (data) {
+
             $.each(data.peds, function (pedKey, pedValue) {
                 //console.log(pedValue);
                 modelSelect.append($('<option></option>').text(pedValue).attr('value', pedValue));
             });
-            new TomSelect("#modelSelect",{
-                persist: true
-            });
+            new TomSelect("#modelSelect", {});
+
+            weaponsSelect.append($('<option></option>').text('nope').attr('value', 'nope'));
             $.each(data.weapons, function (weaponKey, weaponValue) {
                 //console.log(weaponValue);
                 weaponsSelect.append($('<option></option>').text(weaponValue.desc).attr('value', weaponValue.hashkey));
             });
-            new TomSelect("#weaponsSelect",{
-                persist: true
-            });
+            new TomSelect("#weaponsSelect", {});
+
             $.each(data.scenarios, function (scenarioKey, scenarioValue) {
                 //console.log(pedValue);
                 scenariosSelect.append($('<option></option>').text(scenarioValue).attr('value', scenarioValue));
             });
-            new TomSelect("#scenariosSelect",{
-                persist: true
-            });
+            new TomSelect("#scenariosSelect", {});
         });
-        
-        
     }
 
     function startsWith(str, word) {

@@ -1,6 +1,7 @@
 local display = false
+local newPed = nil
 local entities = {}
--- local tags = exports['ProjectX_Tags'] 
+local tags = exports['ProjectX_Tags'] 
 
 for i, team in pairs(Config.Teams) do
     AddRelationshipGroup(team)
@@ -8,30 +9,13 @@ end
 
 -- Show UI
 RegisterCommand("nsp", function(source, args)
-    -- if(tags:isStaff()) then
-    --     SetDisplay(not display)
-    -- end
-    SetDisplay(not display)
+    if(tags:isStaff()) then
+         SetDisplay(not display)
+    end
+    -- SetDisplay(not display)
 end)
 
--- Delete PEDS
-RegisterCommand("nspdel", function(source, args)
-    local totalPeople = tonumber(args[1])
-
-    if totalPeds == nil then
-        totalPeds = 1
-    end
-
-    for i=1,totalPeople, 1 do
-        for _, ped in pairs(entities) do
-            if DoesEntityExist(ped) then
-                DeleteEntity(ped)
-                table.remove(entities, ped)
-            end
-            Wait(10)
-        end
-    end
-end) 
+RegisterKeyMapping("nsp", "NPC Spawner", 'keyboard', '-')
 
 -- ERROR Callback
 RegisterNUICallback("error", function(data)
@@ -53,7 +37,7 @@ RegisterNUICallback("spawn", function(data)
         ['background-color'] = Config.NotifyPrimaryColor,
         ['color'] = Config.NotifyTextColor
     })
-    Spawner(data.peds, data.type)
+    Spawner(data.peds, data.type, data.rel)
 end)
 
 AddEventHandler("onResourceStop", function(resource)
@@ -76,8 +60,8 @@ function SetDisplay(bool)
     })
 end
 
-function Spawner(loadPeds, spawnType)
-    for _, ped in pairs(loadPeds) do
+function Spawner(peds, type, rel)
+    for _, ped in pairs(peds) do
 
         for i = 1, ped.Quantity, 1 do
 
@@ -92,8 +76,7 @@ function Spawner(loadPeds, spawnType)
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x + i, y - i, z, heading, true, false)
-
+            newPed = CreatePed(4, pedHash, x + math.random(1, 3), y + math.random(1, 3), z, heading, true, false)
             -- If we want to spawn animal PED
             if string.starts(ped.Model, Config.AnimalPedPrefix) then
                 TaskWanderStandard(newPed, 10.0, 10)
@@ -108,59 +91,73 @@ function Spawner(loadPeds, spawnType)
 
                 -- Enable/disable weapon drop of peds after dead
                 SetPedDropsWeaponsWhenDead(newPed, Config.DropWeaponAfterDead)
-                
+
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
                     GiveWeaponToPed(newPed, GetHashKey(ped.Weapon), 2000, true, false)
                 end
 
                 -- Assign walk or scenario based on values
-                if (ped.Scenario == "walking") then
+                if ped.Scenario == "walking" then
                     TaskWanderStandard(newPed, 10.0, 10) -- TODO: Implement TaskWanderInArea
                     -- TaskWanderInArea(newPed, x, y, z, 0)
                 else
-                    if (ped.Scenario ~= "nope") then
-                        TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
-                    else
-                        TaskStartScenarioInPlace(newPed, Config.DefaultScenario, 0, true)
-                    end
+                    TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
                 end
             end
 
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
-            -- isStuff()
-            
-            local napitek = true
-            if napitek then
-            -- if(tags:isStaff()) then
-                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
-            else
-                if(ped.Team == "allies") then
-                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
-                else
-                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[2]))
-                end
+            if (ped.Team == "allies") then
+                SetAlliesPedFleeing(newPed)
             end
 
-            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
-            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
-            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
+            -- local napitek = false
+            -- if napitek then
+            if(tags:isStaff()) then
+                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+            else
+                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
+            end
 
-            SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[2]), GetHashKey("PLAYER"))
-            SetRelationshipBetweenGroups(5, GetHashKey("PLAYER"), GetHashKey(Config.Teams[2]))
+            -- Allies | Enemies
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[1]))
+            -- Allies | Admins
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[3]), GetHashKey(Config.Teams[1]))
+            -- Enemies | Admins
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[3]), GetHashKey(Config.Teams[2]))
+
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[2]), GetHashKey("PLAYER"))
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey("PLAYER"), GetHashKey(Config.Teams[2]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey("PLAYER"))
             SetRelationshipBetweenGroups(0, GetHashKey("PLAYER"), GetHashKey(Config.Teams[1]))
 
+            -- TaskSetBlockingOfNonTemporaryEvents(newPed, true)
             -- TODO: Bug of number of NPC
             -- Just because my server suffers
             -- SetModelAsNoLongerNeeded(newPed)
             -- SetPedAsNoLongerNeeded(newPed) -- despawn when player no longer in the area
-            
+
             table.insert(entities, newPed)
             Wait(100)
         end
     end
-
     -- SetDisplay(false)
+end
+
+-- If Player aiming Allies Peds Animation
+function SetAlliesPedFleeing(newPed)
+    Citizen.CreateThread(function()
+        while true do
+            Citizen.Wait(1)
+            local aiming = GetEntityPlayerIsFreeAimingAt(PlayerId(-1), newPed)
+            if aiming then
+                TaskReactAndFleePed(newPed, GetPlayerPed(-1))
+                break
+            end
+        end
+    end)
 end
