@@ -6,6 +6,22 @@ for i, team in pairs(Config.Teams) do
     AddRelationshipGroup(team)
 end
 
+Citizen.CreateThread(function()
+    if tags:isStaff() then
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+    else
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+    end
+end)
+
+AddEventHandler('projectx:playerSpawned', function()
+    if tags:isStaff() then
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+    else
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+    end
+end)
+
 -- Show UI
 RegisterCommand("nsp", function(source, args)
     if(tags:isStaff()) then
@@ -84,7 +100,6 @@ function Spawner(loadPeds, dropWeapon, spawnType)
             -- get source coords
             local pos = GetEntityCoords(GetPlayerPed(-1))
             local heading = GetEntityHeading(GetPlayerPed(-1))
-            local x, y, z = table.unpack(pos)
 
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
@@ -92,7 +107,7 @@ function Spawner(loadPeds, dropWeapon, spawnType)
                 Wait(1)
             end
 
-            local newPed = CreatePed(4, pedHash, x + i, y - i, z, heading, true, false)
+            local newPed = CreatePed(4, pedHash, pos.x + i, pos.y - i, pos.z - 1, heading, true, false)
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, Config.AnimalPedPrefix) then
@@ -128,20 +143,6 @@ function Spawner(loadPeds, dropWeapon, spawnType)
             end
 
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
-
-            -- isStuff()
-            
-            --- local napitek = true
-            -- if napitek then
-            if(tags:isStaff()) then
-                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
-            else
-                if(ped.Team == "allies") then
-                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
-                else
-                    SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[2]))
-                end
-            end
 
             SetRelationshipBetweenGroups(5, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[3]))
