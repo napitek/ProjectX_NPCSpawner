@@ -104,7 +104,9 @@ function Spawner(peds, type, rel)
                 SetPedCombatAttributes(newPed, 0, true) -- CanUserCover
                 SetPedCombatAttributes(newPed, 5, true) -- CanFightArmedPedsWhenNotArmed
                 SetPedCombatAttributes(newPed, 46, true) -- AlwaysFight
-                SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
+                --SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
+                SetEntityHealth(GetHashKey(newPed), ped.Health)
+                print(GetEntityHealth(newPed))
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
                 SetPedAccuracy(newPed, ped.Accuracy)
 
@@ -122,11 +124,11 @@ function Spawner(peds, type, rel)
                 end
             end
 
-            SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
-
             if (ped.Team == "allies") then
                 SetAlliesPedFleeing(newPed)
             end
+            
+            SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
             -- Allies | Enemies
             SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))

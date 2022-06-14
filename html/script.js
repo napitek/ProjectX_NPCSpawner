@@ -70,7 +70,7 @@ $(function () {
         let pedModel = document.getElementById('modelSelect').value;
         let pedScenario = document.getElementById('scenariosSelect').value;
         let pedWeapon = document.getElementById('weaponsSelect').value;
-        let pedMaxHealth = document.getElementById('maxHealthOption').value;
+        let pedHealth = document.getElementById('healthOption').value;
         let pedArmour = document.getElementById('armourOption').value;
         let pedAccuracy = document.getElementById('accuracyOption').value;
         let pedWalk = document.getElementById('walkCheckBox').checked;
@@ -101,7 +101,7 @@ $(function () {
         cols += '<td id="pedWeapon"><p>' + pedWeapon + '</td>';
         cols += '<td id="pedWalk"><p>' + pedWalk + '</td>';
         cols += '<td id="pedScenario"><p>' + pedScenario + '</td>';
-        cols += '<td id="pedMaxHealth"><p>' + pedMaxHealth + '</td>';
+        cols += '<td id="pedHealth"><p>' + pedHealth + '</td>';
         cols += '<td id="pedArmour"><p>' + pedArmour + '</td>';
         cols += '<td id="pedAccuracy"><p>' + pedAccuracy + '</td>';
         cols += '<td id="selectedTeam"><p>' + selectedTeam + '</td>';
@@ -141,14 +141,14 @@ $(function () {
         let weapon = row.find("#pedWeapon").text();
         let walk = row.find("#pedWalk").text();
         let scenario = row.find("#pedModel").text();
-        let maxHealth = row.find("#pedMaxHealth").text();
+        let health = row.find("#pedHealth").text();
         let armour = row.find("#pedArmour").text();
         let accuracy = row.find("#pedAccuracy").text();
         let selectedTeam = row.find("#selectedTeam").text();
         let selectedSpawnType = 'line';
 
         let json = [];
-        json.push({ "Quantity": quantity, "Model": model, "Weapon": weapon, "Walk": walk, "Scenario": scenario, "MaxHealth": maxHealth, "Armour": armour, "Accuracy": accuracy, "Team": selectedTeam });
+        json.push({ "Quantity": quantity, "Model": model, "Weapon": weapon, "Walk": walk, "Scenario": scenario, "Health": health, "Armour": armour, "Accuracy": accuracy, "Team": selectedTeam });
 
         $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
             peds: json,
