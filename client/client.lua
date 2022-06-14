@@ -1,18 +1,37 @@
 local display = false
-local newPed = nil
 local entities = {}
-local tags = exports['ProjectX_Tags'] 
+local tags = exports['ProjectX_Tags']
 
 for i, team in pairs(Config.Teams) do
     AddRelationshipGroup(team)
 end
 
+Citizen.CreateThread(function()
+    if tags:isStaff() then
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+    else
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+    end
+end)
+
+AddEventHandler('projectx:playerSpawned', function()
+    if tags:isStaff() then
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+    else
+        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+    end
+end)
+
 -- Show UI
 RegisterCommand("nsp", function(source, args)
-    if(tags:isStaff()) then
-         SetDisplay(not display)
+    if (tags:isStaff()) then
+        SetDisplay(not display)
+    else
+        exports['mythic_notify']:DoHudText('inform', 'Vorresti eh?! Invece...', {
+            ['background-color'] = Config.NotifyPrimaryColor,
+            ['color'] = Config.NotifyTextColor
+        })
     end
-    -- SetDisplay(not display)
 end)
 
 RegisterKeyMapping("nsp", "NPC Spawner", 'keyboard', '-')
@@ -68,7 +87,6 @@ function Spawner(peds, type, rel)
             -- get source coords
             local pos = GetEntityCoords(GetPlayerPed(-1))
             local heading = GetEntityHeading(GetPlayerPed(-1))
-            local x, y, z = table.unpack(pos)
 
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
@@ -76,7 +94,8 @@ function Spawner(peds, type, rel)
                 Wait(1)
             end
 
-            newPed = CreatePed(4, pedHash, x + math.random(1, 3), y + math.random(1, 3), z, heading, true, false)
+            newPed = CreatePed(4, pedHash, pos.x, pos.y, pos.x, heading, true, false)
+
             -- If we want to spawn animal PED
             if string.starts(ped.Model, Config.AnimalPedPrefix) then
                 TaskWanderStandard(newPed, 10.0, 10)
@@ -110,14 +129,6 @@ function Spawner(peds, type, rel)
 
             if (ped.Team == "allies") then
                 SetAlliesPedFleeing(newPed)
-            end
-
-            -- local napitek = false
-            -- if napitek then
-            if(tags:isStaff()) then
-                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
-            else
-                SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[1]))
             end
 
             -- Allies | Enemies
