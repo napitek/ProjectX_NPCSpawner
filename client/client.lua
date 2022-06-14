@@ -124,9 +124,7 @@ function Spawner(peds, type, rel)
                 end
             end
 
-            if (ped.Team == "allies") then
-                SetAlliesPedFleeing(newPed)
-            end
+           
             
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
@@ -150,7 +148,10 @@ function Spawner(peds, type, rel)
             -- Just because my server suffers
             -- SetModelAsNoLongerNeeded(newPed)
             -- SetPedAsNoLongerNeeded(newPed) -- despawn when player no longer in the area
-
+            if (ped.Team == "allies") then
+                SetAlliesPedFleeing(newPed)
+            end
+            
             table.insert(entities, newPed)
             Wait(100)
         end
