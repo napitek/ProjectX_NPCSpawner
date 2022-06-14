@@ -108,9 +108,6 @@ function Spawner(peds, type, rel)
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
                 SetPedAccuracy(newPed, ped.Accuracy)
 
-                -- Enable/disable weapon drop of peds after dead
-                SetPedDropsWeaponsWhenDead(newPed, Config.DropWeaponAfterDead)
-
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
                     GiveWeaponToPed(newPed, GetHashKey(ped.Weapon), 2000, true, false)
