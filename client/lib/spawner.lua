@@ -1,2 +1,0 @@
-local j = nil
-
