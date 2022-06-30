@@ -93,14 +93,12 @@ function Spawner(peds, type, rel)
             end
 
             local found, pedZ = GetGroundZFor_3dCoord(pos.x, pos.y, pos.z, false)
--- 
+            -- 
             if found then
-                newPed = CreatePed(4, pedHash, pos.x, pos.y, pedZ, heading, true, false)
+                newPed = CreatePed(4, pedHash, pos.x + 1, pos.y, pedZ, heading, true, false)
             else
-                newPed = CreatePed(4, pedHash, pos.x, pos.y, pos.z, heading, true, false)
+                newPed = CreatePed(4, pedHash, pos.x + 1, pos.y, pos.z, heading, true, false)
             end
-
-            
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, Config.AnimalPedPrefix) then
@@ -110,7 +108,7 @@ function Spawner(peds, type, rel)
                 SetPedCombatAttributes(newPed, 0, true) -- CanUserCover
                 SetPedCombatAttributes(newPed, 5, true) -- CanFightArmedPedsWhenNotArmed
                 SetPedCombatAttributes(newPed, 46, true) -- AlwaysFight
-                --SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
+                -- SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
                 SetEntityHealth(GetHashKey(newPed), ped.Health)
                 print(GetEntityHealth(newPed))
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
@@ -131,8 +129,6 @@ function Spawner(peds, type, rel)
                 end
             end
 
-           
-            
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
             -- Allies | Enemies
@@ -158,7 +154,7 @@ function Spawner(peds, type, rel)
             if (ped.Team == "allies") then
                 SetAlliesPedFleeing(newPed)
             end
-            
+
             table.insert(entities, newPed)
             Wait(100)
         end
