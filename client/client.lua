@@ -8,17 +8,17 @@ end
 
 Citizen.CreateThread(function()
     if tags:isStaff() then
-        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+        SetPedRelationshipGroupHash(PlayerPedId(), GetHashKey(Config.Teams[3]))
     else
-        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+        SetPedRelationshipGroupHash(PlayerPedId(), GetHashKey("PLAYER"))
     end
 end)
 
 AddEventHandler('projectx:playerSpawned', function()
     if tags:isStaff() then
-        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey(Config.Teams[3]))
+        SetPedRelationshipGroupHash(PlayerPedId(), GetHashKey(Config.Teams[3]))
     else
-        SetPedRelationshipGroupHash(GetPlayerPed(-1), GetHashKey("PLAYER"))
+        SetPedRelationshipGroupHash(PlayerPedId(), GetHashKey("PLAYER"))
     end
 end)
 
@@ -44,10 +44,6 @@ end)
 
 -- EXIT Callback
 RegisterNUICallback("exit", function(data)
-    exports['mythic_notify']:DoHudText('inform', 'NPCSpawner closed', {
-        ['background-color'] = Config.NotifyBackground,
-        ['color'] = Config.NotifyTextColor
-    })
     SetDisplay(false)
 end)
 
@@ -80,13 +76,15 @@ function SetDisplay(bool)
 end
 
 function Spawner(peds, type, rel)
+    print(peds)
     for _, ped in pairs(peds) do
 
         for i = 1, ped.Quantity, 1 do
 
             -- get source coords
-            local pos = GetEntityCoords(GetPlayerPed(-1))
-            local heading = GetEntityHeading(GetPlayerPed(-1))
+            -- TODO: GetPlayerPed()
+            local pos = GetEntityCoords(PlayerPedId())
+            local heading = GetEntityHeading(PlayerPedId())
 
             local pedHash = GetHashKey(ped.Model)
             RequestModel(pedHash)
@@ -94,7 +92,15 @@ function Spawner(peds, type, rel)
                 Wait(1)
             end
 
-            newPed = CreatePed(4, pedHash, pos.x, pos.y, pos.x, heading, true, false)
+            local found, pedZ = GetGroundZFor_3dCoord(pos.x, pos.y, pos.z, false)
+-- 
+            if found then
+                newPed = CreatePed(4, pedHash, pos.x, pos.y, pedZ, heading, true, false)
+            else
+                newPed = CreatePed(4, pedHash, pos.x, pos.y, pos.z, heading, true, false)
+            end
+
+            
 
             -- If we want to spawn animal PED
             if string.starts(ped.Model, Config.AnimalPedPrefix) then
@@ -109,7 +115,8 @@ function Spawner(peds, type, rel)
                 print(GetEntityHealth(newPed))
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
                 SetPedAccuracy(newPed, ped.Accuracy)
-
+                -- Disable drop weapon
+                SetPedDropsWeaponsWhenDead(newPed, false)
                 -- Assign weapon to ped
                 if ped.Weapon ~= "nope" then
                     GiveWeaponToPed(newPed, GetHashKey(ped.Weapon), 2000, true, false)
@@ -117,7 +124,7 @@ function Spawner(peds, type, rel)
 
                 -- Assign walk or scenario based on values
                 if ped.Scenario == "walking" then
-                    TaskWanderStandard(newPed, 10.0, 10) -- TODO: Implement TaskWanderInArea
+                    TaskWanderStandard(newPed, 10.0, 10)
                     -- TaskWanderInArea(newPed, x, y, z, 0)
                 else
                     TaskStartScenarioInPlace(newPed, ped.Scenario, 0, true)
@@ -166,7 +173,7 @@ function SetAlliesPedFleeing(newPed)
             Citizen.Wait(1)
             local aiming = GetEntityPlayerIsFreeAimingAt(PlayerId(-1), newPed)
             if aiming then
-                TaskReactAndFleePed(newPed, GetPlayerPed(-1))
+                TaskReactAndFleePed(newPed, PlayerPedId())
                 break
             end
         end

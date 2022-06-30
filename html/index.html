@@ -23,7 +23,7 @@
                         NPC Spawner
                     </h4>
                     <p>
-                        Choose the properties of the NPCs to spawn and assign them the a team.
+                        Scegli le proprietà degli NPC da generare e assegnali ad una squadra.
                     </p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bookmarks"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">Bookmarks <span
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Preferiti <span
                             class="badge bg-secondary">COOMING SOON</span></button>
                 </li>
             </ul>
@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col-quantity">
                                 <div class="input-group">
-                                    <span class="input-group-text">Quantity</span>
+                                    <span class="input-group-text">Quantita</span>
                                     <input type="number" min="1" max="50" class="form-control"
                                         aria-label="Number of NPCs" id="pedsNumberInput" value="1">
                                 </div>
@@ -57,7 +57,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="input-group">
-                                    <label class="input-group-text" for="modelSelect">Model&nbsp;&nbsp;
+                                    <label class="input-group-text" for="modelSelect">Modello&nbsp;&nbsp;
                                         <i class="fa fa-eye"></i></label>
                                     <select class="form-select" id="modelSelect" autocomplete="off">
 
@@ -67,7 +67,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="input-group-text" for="weaponsSelect">
-                                        Weapon&nbsp;&nbsp;<i class="fa fa-eye"></i>
+                                        Arma&nbsp;&nbsp;<i class="fa fa-eye"></i>
                                     </label>
                                     <select class="form-select" id="weaponsSelect" autocomplete="off">
 
@@ -79,7 +79,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="walkCheckBox">
                                         <label class="form-check-label"
-                                            for="flexCheckDefault">Walk&nbsp;&nbsp;&nbsp;</label>
+                                            for="flexCheckDefault">Cammina&nbsp;&nbsp;&nbsp;</label>
                                     </div>
                                     <label class="input-group-text" for="scenariosSelect">Scenario</label>
                                     <select class="form-select" id="scenariosSelect" autocomplete="off"></select>
@@ -90,7 +90,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="healthRange">Health&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <label for="healthRange">Salute&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                     <input type="range" name="healthRange" id="healthRange" value="30" min="10"
                                         max="100" step="10" oninput="healthOption.value = healthRange.value">
                                     <output name="healthOption" id="healthOption">30</output>
@@ -98,7 +98,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="armourRange">Armour&nbsp;</label>
+                                    <label for="armourRange">Armatura&nbsp;</label>
                                     <input type="range" name="armourRange" id="armourRange" value="0" min="0" max="100"
                                         step="10" oninput="armourOption.value = armourRange.value">
                                     <output name="armourOption" id="armourOption">0</output>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="accuracyRange">Accuracy&nbsp;</label>
+                                    <label for="accuracyRange">Precisione&nbsp;</label>
                                     <input type="range" name="accuracyRange" id="accuracyRange" value="30" min="10"
                                         max="100" step="10" oninput="accuracyOption.value = accuracyRange.value">
                                     <output name="accuracyOption" id="accuracyOption">30</output>
@@ -117,20 +117,20 @@
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="teamsRadio" id="allies"
                                             value="allies" checked="checked">
-                                        <label class="form-check-label" for="allies">Allies</label>
+                                        <label class="form-check-label" for="allies">Alleati</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="teamsRadio" id="enemies"
                                             value="enemies">
-                                        <label class="form-check-label" for="enemies">Enemies</label>
+                                        <label class="form-check-label" for="enemies">Nemici</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <label for="relationSelect">Level of relationship between the allies and enemies teams</label>
+                                <label for="relationSelect">Livello di relazione tra le squadre alleate e nemiche</label>
                                 <div class="input-group">
                                     <label class="input-group-text" for="relationSelect">
-                                       Relation&nbsp;&nbsp;</i>
+                                       Relazione&nbsp;&nbsp;</i>
                                     </label>
                                     <select class="form-select" id="relationSelect" autocomplete="off">
                                         <option value="0">0 - Companion</option>
@@ -148,7 +148,7 @@
                                 <div class="input-group">
                                     <button class="btn btn-fuchsia" id="insertRow" type="button"><i
                                             class="fa fa-plus"></i>
-                                        <b>Add</b></button>
+                                        <b>Aggiungi</b></button>
                                 </div>
 
                             </div>
@@ -161,14 +161,14 @@
                             <table id="pedsTable" class="table transparent">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Model</th>
-                                        <th scope="col">Weapon</th>
-                                        <th scope="col">Walk</th>
+                                        <th scope="col">Quantita</th>
+                                        <th scope="col">Modello</th>
+                                        <th scope="col">Arma</th>
+                                        <th scope="col">Cammina</th>
                                         <th scope="col">Scenario</th>
-                                        <th scope="col">MaxHealth</th>
-                                        <th scope="col">Armour</th>
-                                        <th scope="col">Accuracy</th>
+                                        <th scope="col">Salute</th>
+                                        <th scope="col">Armatura</th>
+                                        <th scope="col">Precisione</th>
                                         <th scope="col">Team</th>
                                         <th scope="col">
                                             <button class="btn btn-warning" id="resetTable" type="button">
@@ -197,7 +197,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="spawnTypeRadio" id="line"
                                         value="allies">
-                                    <label class="form-check-label" for="line">Line</label>
+                                    <label class="form-check-label" for="line">Linea</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="spawnTypeRadio" id="area"
@@ -208,10 +208,10 @@
                             <br>
                             <button class="btn btn-dark float-right" id="spawnType" type="button" disabled><i
                                     class="fa fa-save"></i>
-                                <b>Save</b></button>
+                                <b>Salva</b></button>
                             <button class="btn btn-fuchsia float-right" id="spawn" type="button"><i
                                     class="fa fa-fire"></i>
-                                <b>Spawn</b></button>
+                                <b>Spawna</b></button>
                         </div>
                     </div>
                 </div>
