@@ -76,7 +76,6 @@ function SetDisplay(bool)
 end
 
 function Spawner(peds, type, rel)
-    print(peds)
     for _, ped in pairs(peds) do
 
         for i = 1, ped.Quantity, 1 do
@@ -110,7 +109,6 @@ function Spawner(peds, type, rel)
                 SetPedCombatAttributes(newPed, 46, true) -- AlwaysFight
                 -- SetPedMaxHealth(newPed, ped.MaxHealth) -- PED Health
                 SetEntityHealth(GetHashKey(newPed), ped.Health)
-                print(GetEntityHealth(newPed))
                 SetPedArmour(newPed, ped.Armour) -- PED Armor
                 SetPedAccuracy(newPed, ped.Accuracy)
                 -- Disable drop weapon
