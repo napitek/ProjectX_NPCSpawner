@@ -144,8 +144,11 @@ function Spawner(peds, type, rel)
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[3]), GetHashKey(Config.Teams[2]))
 
+<<<<<<< Updated upstream
             
 
+=======
+>>>>>>> Stashed changes
             -- TaskSetBlockingOfNonTemporaryEvents(newPed, true)
             -- TODO: Bug of number of NPC
             -- Just because my server suffers
