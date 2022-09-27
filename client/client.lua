@@ -129,6 +129,11 @@ function Spawner(peds, type, rel)
 
             SetPedRelationshipGroupHash(newPed, GetHashKey(ped.Team))
 
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[2]), GetHashKey("PLAYER"))
+            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey("PLAYER"), GetHashKey(Config.Teams[2]))
+            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey("PLAYER"))
+            SetRelationshipBetweenGroups(0, GetHashKey("PLAYER"), GetHashKey(Config.Teams[1]))
+
             -- Allies | Enemies
             SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[1]), GetHashKey(Config.Teams[2]))
             SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[1]))
@@ -139,10 +144,7 @@ function Spawner(peds, type, rel)
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[2]), GetHashKey(Config.Teams[3]))
             SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[3]), GetHashKey(Config.Teams[2]))
 
-            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey(Config.Teams[2]), GetHashKey("PLAYER"))
-            SetRelationshipBetweenGroups(tonumber(rel), GetHashKey("PLAYER"), GetHashKey(Config.Teams[2]))
-            SetRelationshipBetweenGroups(0, GetHashKey(Config.Teams[1]), GetHashKey("PLAYER"))
-            SetRelationshipBetweenGroups(0, GetHashKey("PLAYER"), GetHashKey(Config.Teams[1]))
+            
 
             -- TaskSetBlockingOfNonTemporaryEvents(newPed, true)
             -- TODO: Bug of number of NPC
