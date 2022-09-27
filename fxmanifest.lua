@@ -4,7 +4,7 @@ games { 'gta5' }
 
 author 'napitek'
 description 'Projectx_NPCSpawner'
-version '0.0.7'
+version '0.0.10'
 
 ui_page 'html/index.html'
 

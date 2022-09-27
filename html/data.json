@@ -823,125 +823,149 @@
         "u_m_y_caleb",
         "u_m_y_croupthief_01",
         "u_m_y_gabriel",
-        "u_m_y_ushi"
+        "u_m_y_ushi",
+        "Baby",
+        "battleRifle",
+        "BF4RusAssault",
+        "Brightburn",
+        "Child",
+        "chucky",
+        "Clementine",
+        "copZ",
+        "Dante2",
+        "DocZ",
+        "draculahigh",
+        "executioner",
+        "HcopZ",
+        "Jodie",
+        "NewNemesis",
+        "orso",
+        "ParaZ",
+        "Reventant",
+        "skeleton",
+        "TheTallMan",
+        "VAMPIRE",
+        "vampmonster",
+        "villainSpyglass",
+        "Zombi_Mutant",
+        "zombie1",
+        "zombie2",
+        "zombie4",
+        "Hel_triborg",
+        "Shot",
+        "Key_Fixer",
+        "Toxic",
+        "Trigger"
     ],
     
     "weapons": [
         {
             "hashkey": "weapon_advancedrifle",
-            "desc": "Advanced Rifle"
+            "desc": "Fucile avanzato"
         },
         {
             "hashkey": "weapon_appistol",
-            "desc": "AP Pistol"
+            "desc": "Pistola AP"
         },
         {
             "hashkey": "weapon_assaultrifle",
-            "desc": "Assault Rifle"
+            "desc": "Fucile d'assalto"
         },
         {
             "hashkey": "weapon_assaultrifle_mk2",
-            "desc": "Assault Rifle Mk II"
+            "desc": "Fucile d'assalto Mk II"
         },
         {
             "hashkey": "weapon_assaultshotgun",
-            "desc": "Assault Shotgun"
+            "desc": "Fucile a pompa d'assalto"
         },
         {
             "hashkey": "weapon_assaultsmg",
-            "desc": "Assault SMG"
+            "desc": "Mitra d'assalto"
         },
         {
             "hashkey": "weapon_autoshotgun",
-            "desc": "Sweeper Shotgun"
+            "desc": "Fucile a pompa Sweeper"
         },
         {
             "hashkey": "weapon_bat",
-            "desc": "Baseball Bat"
+            "desc": "Mazza da Baseball"
         },
         {
             "hashkey": "weapon_ball",
-            "desc": "Ball"
+            "desc": "Palla"
         },
         {
             "hashkey": "weapon_battleaxe",
-            "desc": "Battle Axe"
+            "desc": "Ascia da guerra"
         },
         {
             "hashkey": "weapon_bottle",
-            "desc": "Bottle"
+            "desc": "Bottiglia"
         },
         {
             "hashkey": "weapon_bullpuprifle",
-            "desc": "Bullpup Rifle"
+            "desc": "Fucile Bullpup"
         },
         {
             "hashkey": "weapon_bullpuprifle_mk2",
-            "desc": "Bullpup Rifle Mk II"
+            "desc": "Fucile Bullpup Mk II"
         },
         {
             "hashkey": "weapon_bullpupshotgun",
-            "desc": "Bullpup Shotgun"
+            "desc": "Fucile a pompa Bullpup"
         },
         {
             "hashkey": "weapon_bzgas",
-            "desc": "BZ Gas"
+            "desc": "Gas BZ"
         },
         {
             "hashkey": "weapon_carbinerifle",
-            "desc": "Carbine Rifle"
+            "desc": "Carabina"
         },
         {
             "hashkey": "weapon_carbinerifle_mk2",
-            "desc": "Carbine Rifle Mk II"
-        },
-        {
-            "hashkey": "weapon_combatmg",
-            "desc": "Combat MG"
-        },
-        {
-            "hashkey": "weapon_combatmg_mk2",
-            "desc": "Combat MG Mk II"
+            "desc": "Carabina Mk II"
         },
         {
             "hashkey": "weapon_combatpdw",
-            "desc": "Combat PDW"
+            "desc": "PDW da combattimento"
         },
         {
             "hashkey": "weapon_combatpistol",
-            "desc": "Combat Pistol"
+            "desc": "Pistola da combattimento"
         },
         {
             "hashkey": "weapon_compactlauncher",
-            "desc": "Compact Grenade Launcher"
+            "desc": "Lanciagranate compatto"
         },
         {
             "hashkey": "weapon_compactrifle",
-            "desc": "Compact Rifle"
+            "desc": "Fucile compatto"
         },
         {
             "hashkey": "weapon_crowbar",
-            "desc": "Crowbar"
+            "desc": "Piede di porco"
         },
         {
             "hashkey": "weapon_dagger",
-            "desc": "Antique Cavalry Dagger"
+            "desc": "Pugnale antico"
         },
         {
             "hashkey": "weapon_dbshotgun",
-            "desc": "Double Barrel Shotgun"
+            "desc": "Doppietta canne mozze"
         },
         {
             "hashkey": "weapon_doubleaction",
-            "desc": "Double-Action Revolver"
+            "desc": "Revolver a doppia azione"
         },
         {
             "hashkey": "weapon_fireextinguisher",
-            "desc": "Fire Extinguisher"
+            "desc": "Estintore"
         },
         {
             "hashkey": "weapon_firework",
-            "desc": "Firework Launcher"
+            "desc": "Cannone pirotecnico"
         },
         {
             "hashkey": "weapon_flare",
@@ -949,63 +973,63 @@
         },
         {
             "hashkey": "weapon_flaregun",
-            "desc": "Flare Gun"
+            "desc": "Pistola lanciarazzi"
         },
         {
             "hashkey": "weapon_flashlight",
-            "desc": "Flashlight"
+            "desc": "Torcia"
         },
         {
             "hashkey": "weapon_golfclub",
-            "desc": "Golf Club"
+            "desc": "Mazza da golf"
         },
         {
             "hashkey": "weapon_grenade",
-            "desc": "Grenade"
+            "desc": "Granata"
         },
         {
             "hashkey": "weapon_grenadelauncher",
-            "desc": "Grenade Launcher"
+            "desc": "Lanciagranate"
         },
         {
             "hashkey": "weapon_gusenberg",
-            "desc": "Gusenberg Sweeper"
+            "desc": "Gusenberg"
         },
         {
             "hashkey": "weapon_hammer",
-            "desc": "Hammer"
+            "desc": "Martello"
         },
         {
             "hashkey": "weapon_hatchet",
-            "desc": "Hatchet"
+            "desc": "Accetta"
         },
         {
             "hashkey": "weapon_heavypistol",
-            "desc": "Heavy Pistol"
+            "desc": "Pistola pesante"
         },
         {
             "hashkey": "weapon_heavyshotgun",
-            "desc": "Heavy Shotgun"
+            "desc": "Fucile a pompa pesante"
         },
         {
             "hashkey": "weapon_heavysniper",
-            "desc": "Heavy Sniper"
+            "desc": "Fucile da checchino pesante"
         },
         {
             "hashkey": "weapon_heavysniper_mk2",
-            "desc": "Heavy Sniper Mk II"
+            "desc": "Fucile da checchino pes. Mk II"
         },
         {
             "hashkey": "weapon_hominglauncher",
-            "desc": "Homing Launcher"
+            "desc": "Lanciamissili a ricerca"
         },
         {
             "hashkey": "weapon_knife",
-            "desc": "Knife"
+            "desc": "Coltello"
         },
         {
             "hashkey": "weapon_knuckle",
-            "desc": "Knuckle Duster"
+            "desc": "Tirapugni"
         },
         {
             "hashkey": "weapon_machete",
@@ -1013,27 +1037,27 @@
         },
         {
             "hashkey": "weapon_machinepistol",
-            "desc": "Machine Pistol"
+            "desc": "Pistola automatica"
         },
         {
             "hashkey": "weapon_marksmanpistol",
-            "desc": "Marksman Pistol"
+            "desc": "Pistola da tiratore"
         },
         {
             "hashkey": "weapon_marksmanrifle",
-            "desc": "Marksman Rifle"
+            "desc": "Fucile da tiratore"
         },
         {
             "hashkey": "weapon_marksmanrifle_mk2",
-            "desc": "Marksman Rifle Mk II"
+            "desc": "Fucile da tiratore Mk II"
         },
         {
             "hashkey": "weapon_mg",
-            "desc": "MG"
+            "desc": "Mitragliatrice"
         },
         {
             "hashkey": "weapon_microsmg",
-            "desc": "Micro SMG"
+            "desc": "Pistola mitragliatrice"
         },
         {
             "hashkey": "weapon_minigun",
@@ -1041,7 +1065,7 @@
         },
         {
             "hashkey": "weapon_minismg",
-            "desc": "Mini SMG"
+            "desc": "Mini mitra"
         },
         {
             "hashkey": "weapon_molotov",
@@ -1049,47 +1073,47 @@
         },
         {
             "hashkey": "weapon_musket",
-            "desc": "Musket"
+            "desc": "Moschetto"
         },
         {
             "hashkey": "weapon_nightstick",
-            "desc": "Nightstick"
+            "desc": "Manganello"
         },
         {
             "hashkey": "weapon_petrolcan",
-            "desc": "Jerry Can"
+            "desc": "Tanica"
         },
         {
             "hashkey": "weapon_pipebomb",
-            "desc": "Pipe Bomb"
+            "desc": "Tubo bomba"
         },
         {
             "hashkey": "weapon_pistol",
-            "desc": "Pistol"
+            "desc": "Pistola"
         },
         {
             "hashkey": "weapon_pistol50",
-            "desc": "Pistol .50"
+            "desc": "Pistol calibro 50"
         },
         {
             "hashkey": "weapon_pistol_mk2",
-            "desc": "Pistol Mk II"
+            "desc": "Pistola Mk II"
         },
         {
             "hashkey": "weapon_poolcue",
-            "desc": "Pool Cue"
+            "desc": "Stecca da biliardo"
         },
         {
             "hashkey": "weapon_proxmine",
-            "desc": "Proximity Mine"
+            "desc": "Mina di prossimità"
         },
         {
             "hashkey": "weapon_pumpshotgun",
-            "desc": "Pump Shotgun"
+            "desc": "Fucile a pompa"
         },
         {
             "hashkey": "weapon_pumpshotgun_mk2",
-            "desc": "Pump Shotgun Mk II"
+            "desc": "Fucile a pompa Mk II"
         },
         {
             "hashkey": "weapon_railgun",
@@ -1097,11 +1121,11 @@
         },
         {
             "hashkey": "weapon_revolver",
-            "desc": "Heavy Revolver"
+            "desc": "Revolver pesante"
         },
         {
             "hashkey": "weapon_revolver_mk2",
-            "desc": "Heavy Revolver Mk II"
+            "desc": "Revolver pesante Mk II"
         },
         {
             "hashkey": "weapon_rpg",
@@ -1109,63 +1133,63 @@
         },
         {
             "hashkey": "weapon_sawnoffshotgun",
-            "desc": "Sawed-Off Shotgun"
+            "desc": "Fucile a canne mozze"
         },
         {
             "hashkey": "weapon_smg",
-            "desc": "SMG"
+            "desc": "Mitra"
         },
         {
             "hashkey": "weapon_smg_mk2",
-            "desc": "SMG Mk II"
+            "desc": "Mitra Mk II"
         },
         {
             "hashkey": "weapon_smokegrenade",
-            "desc": "Tear Gas"
+            "desc": "Granata a gas"
         },
         {
             "hashkey": "weapon_sniperrifle",
-            "desc": "Sniper Rifle"
+            "desc": "Fucile da cecchino"
         },
         {
             "hashkey": "weapon_snowball",
-            "desc": "Snowball"
+            "desc": "Palla di neve"
         },
         {
             "hashkey": "weapon_snspistol",
-            "desc": "SNS Pistol"
+            "desc": "Pistoletta"
         },
         {
             "hashkey": "weapon_snspistol_mk2",
-            "desc": "SNS Pistol Mk II"
+            "desc": "Pistoletta Mk II"
         },
         {
             "hashkey": "weapon_specialcarbine",
-            "desc": "Special Carbine"
+            "desc": "Carabina speciale"
         },
         {
             "hashkey": "weapon_specialcarbine_mk2",
-            "desc": "Special Carbine Mk II"
+            "desc": "Carabina speciale Mk II"
         },
         {
             "hashkey": "weapon_stickybomb",
-            "desc": "Sticky Bomb"
+            "desc": "Bomba adesiva"
         },
         {
             "hashkey": "weapon_stungun",
-            "desc": "Stun Gun"
+            "desc": "Storditore"
         },
         {
             "hashkey": "weapon_switchblade",
-            "desc": "Switchblade"
+            "desc": "Coltello a serramanico"
         },
         {
             "hashkey": "weapon_vintagepistol",
-            "desc": "Vintage Pistol"
+            "desc": "Pistola vintage"
         },
         {
             "hashkey": "weapon_wrench",
-            "desc": "Pipe Wrench"
+            "desc": "Giratubi"
         },
         {
             "hashkey": "weapon_raypistol",
@@ -1173,50 +1197,164 @@
         },
         {
             "hashkey": "weapon_raycarbine",
-            "desc": "Unholy Hellbringer"
+            "desc": "Empia devastatrice"
         },
         {
             "hashkey": "weapon_rayminigun",
-            "desc": "Widowmaker"
+            "desc": "Fabbricavedove"
         },
         {
             "hashkey": "weapon_stone_hatchet",
-            "desc": "Stone Hatchet"
+            "desc": "Accetta di pietra"
         }
     ],
     "scenarios": [
-        "WORLD_HUMAN_SMOKING",
-        "WORLD_HUMAN_COP_IDLES",
+        "WORLD_HUMAN_AA_COFFEE",
+        "WORLD_HUMAN_AA_SMOKE",
         "WORLD_HUMAN_BINOCULARS",
+        "WORLD_HUMAN_BUM_FREEWAY",
+        "WORLD_HUMAN_BUM_SLUMPED",
+        "WORLD_HUMAN_BUM_STANDING",
+        "WORLD_HUMAN_BUM_WASH",
+        "WORLD_HUMAN_CAR_PARK_ATTENDANT",
         "WORLD_HUMAN_CHEERING",
+        "WORLD_HUMAN_CLIPBOARD",
+        "WORLD_HUMAN_CONST_DRILL",
+        "WORLD_HUMAN_COP_IDLES",
         "WORLD_HUMAN_DRINKING",
+        "WORLD_HUMAN_DRUG_DEALER",
+        "WORLD_HUMAN_DRUG_DEALER_HARD",
         "WORLD_HUMAN_MOBILE_FILM_SHOCKING",
+        "WORLD_HUMAN_GARDENER_LEAF_BLOWER",
         "WORLD_HUMAN_GARDENER_PLANT",
+        "WORLD_HUMAN_GOLF_PLAYER",
+        "WORLD_HUMAN_GUARD_PATROL",
         "WORLD_HUMAN_GUARD_STAND",
+        "WORLD_HUMAN_GUARD_STAND_ARMY",
         "WORLD_HUMAN_HAMMERING",
         "WORLD_HUMAN_HANG_OUT_STREET",
         "WORLD_HUMAN_HIKER_STANDING",
         "WORLD_HUMAN_HUMAN_STATUE",
+        "WORLD_HUMAN_JANITOR",
         "WORLD_HUMAN_JOG_STANDING",
         "WORLD_HUMAN_LEANING",
         "WORLD_HUMAN_MUSCLE_FLEX",
+        "WORLD_HUMAN_MUSCLE_FREE_WEIGHTS",
+        "WORLD_HUMAN_MAID_CLEAN",
+        "WORLD_HUMAN_MUSICIAN",
         "WORLD_HUMAN_PAPARAZZI",
+        "WORLD_HUMAN_PARTYING",
         "WORLD_HUMAN_PICNIC",
-        "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER",
         "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS",
         "WORLD_HUMAN_PROSTITUTE_LOW_CLASS",
         "WORLD_HUMAN_PUSH_UPS",
+        "WORLD_HUMAN_SEAT_LEDGE",
+        "WORLD_HUMAN_SEAT_LEDGE_EATING",
+        "WORLD_HUMAN_SEAT_STEPS",
+        "WORLD_HUMAN_SEAT_WALL",
+        "WORLD_HUMAN_SEAT_WALL_EATING",
+        "WORLD_HUMAN_SEAT_WALL_TABLET",
+        "WORLD_HUMAN_SECURITY_SHINE_TORCH",
         "WORLD_HUMAN_SIT_UPS",
+        "WORLD_HUMAN_SMOKING",
+        "WORLD_HUMAN_SMOKING_POT",
+        "WORLD_HUMAN_STAND_FIRE",
         "WORLD_HUMAN_STAND_FISHING",
         "WORLD_HUMAN_STAND_IMPATIENT",
+        "WORLD_HUMAN_STAND_IMPATIENT_UPRIGHT",
         "WORLD_HUMAN_STAND_MOBILE",
+        "WORLD_HUMAN_STAND_MOBILE_UPRIGHT",
         "WORLD_HUMAN_STRIP_WATCH_STAND",
-        "WORLD_HUMAN_SUNBATHE_BACK",
+        "WORLD_HUMAN_STUPOR",
         "WORLD_HUMAN_SUNBATHE",
+        "WORLD_HUMAN_SUNBATHE_BACK",
+        "WORLD_HUMAN_SUPERHERO",
+        "WORLD_HUMAN_SWIMMING",
+        "WORLD_HUMAN_TENNIS_PLAYER",
+        "WORLD_HUMAN_TOURIST_MAP",
+        "WORLD_HUMAN_TOURIST_MOBILE",
+        "WORLD_HUMAN_VEHICLE_MECHANIC",
         "WORLD_HUMAN_WELDING",
+        "WORLD_HUMAN_WINDOW_SHOP_BROWSE",
         "WORLD_HUMAN_YOGA",
+        "WORLD_BOAR_GRAZING",
+        "WORLD_CAT_SLEEPING_GROUND",
+        "WORLD_CAT_SLEEPING_LEDGE",
+        "WORLD_COW_GRAZING",
+        "WORLD_COYOTE_HOWL",
+        "WORLD_COYOTE_REST",
+        "WORLD_COYOTE_WANDER",
+        "WORLD_CHICKENHAWK_FEEDING",
+        "WORLD_CHICKENHAWK_STANDING",
+        "WORLD_CORMORANT_STANDING",
+        "WORLD_CROW_FEEDING",
+        "WORLD_CROW_STANDING",
+        "WORLD_DEER_GRAZING",
+        "WORLD_DOG_BARKING_ROTTWEILER",
+        "WORLD_DOG_BARKING_RETRIEVER",
+        "WORLD_DOG_BARKING_SHEPHERD",
+        "WORLD_DOG_SITTING_ROTTWEILER",
+        "WORLD_DOG_SITTING_RETRIEVER",
+        "WORLD_DOG_SITTING_SHEPHERD",
+        "WORLD_DOG_BARKING_SMALL",
+        "WORLD_DOG_SITTING_SMALL",
+        "WORLD_FISH_IDLE",
+        "WORLD_GULL_FEEDING",
+        "WORLD_GULL_STANDING",
+        "WORLD_HEN_PECKING",
+        "WORLD_HEN_STANDING",
+        "WORLD_MOUNTAIN_LION_REST",
+        "WORLD_MOUNTAIN_LION_WANDER",
+        "WORLD_PIG_GRAZING",
+        "WORLD_PIGEON_FEEDING",
+        "WORLD_PIGEON_STANDING",
+        "WORLD_RABBIT_EATING",
+        "WORLD_RATS_EATING",
+        "WORLD_SHARK_SWIM",
+        "PROP_BIRD_IN_TREE",
+        "PROP_BIRD_TELEGRAPH_POLE",
+        "PROP_HUMAN_ATM",
+        "PROP_HUMAN_BBQ",
+        "PROP_HUMAN_BUM_BIN",
+        "PROP_HUMAN_BUM_SHOPPING_CART",
+        "PROP_HUMAN_MUSCLE_CHIN_UPS",
+        "PROP_HUMAN_MUSCLE_CHIN_UPS_ARMY",
+        "PROP_HUMAN_MUSCLE_CHIN_UPS_PRISON",
+        "PROP_HUMAN_PARKING_METER",
+        "PROP_HUMAN_SEAT_ARMCHAIR",
+        "PROP_HUMAN_SEAT_BAR",
+        "PROP_HUMAN_SEAT_BENCH",
+        "PROP_HUMAN_SEAT_BENCH_DRINK",
+        "PROP_HUMAN_SEAT_BENCH_DRINK_BEER",
+        "PROP_HUMAN_SEAT_BENCH_FOOD",
+        "PROP_HUMAN_SEAT_BUS_STOP_WAIT",
+        "PROP_HUMAN_SEAT_CHAIR",
+        "PROP_HUMAN_SEAT_CHAIR_DRINK",
+        "PROP_HUMAN_SEAT_CHAIR_DRINK_BEER",
+        "PROP_HUMAN_SEAT_CHAIR_FOOD",
+        "PROP_HUMAN_SEAT_CHAIR_UPRIGHT",
+        "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER",
+        "PROP_HUMAN_SEAT_COMPUTER",
+        "PROP_HUMAN_SEAT_DECKCHAIR",
+        "PROP_HUMAN_SEAT_DECKCHAIR_DRINK",
+        "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS",
+        "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS_PRISON",
+        "PROP_HUMAN_SEAT_SEWING",
+        "PROP_HUMAN_SEAT_STRIP_WATCH",
+        "PROP_HUMAN_SEAT_SUNLOUNGER",
+        "PROP_HUMAN_STAND_IMPATIENT",
+        "CODE_HUMAN_COWER",
+        "CODE_HUMAN_CROSS_ROAD_WAIT",
+        "CODE_HUMAN_PARK_CAR",
+        "PROP_HUMAN_MOVIE_BULB",
+        "PROP_HUMAN_MOVIE_STUDIO_LIGHT",
         "CODE_HUMAN_MEDIC_KNEEL",
+        "CODE_HUMAN_MEDIC_TEND_TO_DEAD",
+        "CODE_HUMAN_MEDIC_TIME_OF_DEATH",
         "CODE_HUMAN_POLICE_CROWD_CONTROL",
-        "CODE_HUMAN_POLICE_INVESTIGATE"
+        "CODE_HUMAN_POLICE_INVESTIGATE",
+        "CODE_HUMAN_STAND_COWER",
+        "EAR_TO_TEXT",
+        "EAR_TO_TEXT_FAT"
     ]
 }

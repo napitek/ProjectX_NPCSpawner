@@ -99,7 +99,6 @@ $(function () {
         cols += '<td id="pedsNumber"><p>' + pedsNumber + '</td>';
         cols += '<td id="pedModel"><p>' + pedModel + '</td>';
         cols += '<td id="pedWeapon"><p>' + pedWeapon + '</td>';
-        cols += '<td id="pedWalk"><p>' + pedWalk + '</td>';
         cols += '<td id="pedScenario"><p>' + pedScenario + '</td>';
         cols += '<td id="pedHealth"><p>' + pedHealth + '</td>';
         cols += '<td id="pedArmour"><p>' + pedArmour + '</td>';
@@ -139,8 +138,7 @@ $(function () {
         let quantity = row.find("#pedsNumber").text();
         let model = row.find("#pedModel").text();
         let weapon = row.find("#pedWeapon").text();
-        let walk = row.find("#pedWalk").text();
-        let scenario = row.find("#pedModel").text();
+        let scenario = row.find("#pedScenario").text();
         let health = row.find("#pedHealth").text();
         let armour = row.find("#pedArmour").text();
         let accuracy = row.find("#pedAccuracy").text();
@@ -148,7 +146,7 @@ $(function () {
         let selectedSpawnType = 'line';
 
         let json = [];
-        json.push({ "Quantity": quantity, "Model": model, "Weapon": weapon, "Walk": walk, "Scenario": scenario, "Health": health, "Armour": armour, "Accuracy": accuracy, "Team": selectedTeam });
+        json.push({ "Quantity": quantity, "Model": model, "Weapon": weapon, "Scenario": scenario, "Health": health, "Armour": armour, "Accuracy": accuracy, "Team": selectedTeam });
 
         $.post('https://Projectx_NPCSpawner/spawn', JSON.stringify({
             peds: json,
